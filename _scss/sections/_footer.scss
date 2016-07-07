@@ -1,0 +1,39 @@
+footer {
+  text-align: center;
+  .social {
+    list-style-type: none;
+    margin: 0;
+    padding: $spacer-x 0;
+
+    li {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 $spacer-x/8;
+    }
+
+    &__link {
+      display: block;
+      width: 34px;
+      height: 34px;
+      line-height: 44px;
+      margin: 0 auto;
+      text-align: center;
+      border-radius: 100%;
+      background-color: $gray-light;
+
+      &:hover {
+        background-color: $brand-primary;
+      }
+    }
+    svg {
+      fill: white;
+      width: 22px;
+      height: 22px;
+      background-color: transparent;
+    }
+  }
+
+  .ebury-logo {
+    width: 50px;
+  }
+}

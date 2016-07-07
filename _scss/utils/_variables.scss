@@ -1,0 +1,41 @@
+// Override the Bootstrap base variables here
+
+// Colours
+
+$gray-dark:                 #373a3c;
+$gray:                      #55595c;
+$gray-light:                #818a91;
+$gray-lighter:              #eceeef;
+$gray-lightest:             #ccc;
+
+$brand-primary:             #295E6F;
+$brand-secondary:           #F5EFE9;
+$brand-blue:                #00BBFF;
+$brand-success:             #5cb85c;
+$brand-info:                #5bc0de;
+$brand-warning:             #f0ad4e;
+$brand-danger:              #d9534f;
+
+// Typography
+$base-font-family:            "Derp", serif;
+$headings-font-family:        "Derp", sans-serif;
+
+// Buttons
+$btn-secondary-color:            #fff;
+$btn-secondary-bg:               $brand-secondary;
+$btn-secondary-border:           $brand-secondary;
+
+// Misc.
+$border-radius:               0 !default;
+
+
+// Non-Bootstrap variables
+$simple-font-family:          -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+
+$facebook_color:              hsla(222, 47%, 40%, 1);     // #365397
+$twitter_color:               hsla(198, 100%, 47%, 1);    // #00a9f1
+$youtube_color:               hsla(0, 100%, 60%, 1);      // #ff3333
+$pinterest_color:             hsla(0, 78%, 45%, 1);       // #ce1a19
+$instagram_color:             hsla(208, 46%, 41%, 1);     // #396d9a
+
+$max-width-content:           480px;
