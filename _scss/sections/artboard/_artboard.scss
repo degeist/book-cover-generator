@@ -1,5 +1,12 @@
-.artboard {
+#artboard {
   border: 2px solid $gray-light;
   background: url('../img/artboard/backgrounds/dummy-bg.jpg') top center no-repeat #fff;
   background-size: cover;
+
+  .cover-headline {
+    font-family: $custom-font-family;
+    color: white;
+    font-size: 30px;
+  }
+
 }

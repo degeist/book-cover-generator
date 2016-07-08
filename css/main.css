@@ -4806,18 +4806,6 @@ body {
 h1, h2, h3, h4 {
   text-transform: uppercase; }
 
-.pull-quote {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-  color: #295E6F;
-  font-size: 1.2rem;
-  font-weight: 300; }
-  .pull-quote__name {
-    font-size: .9rem;
-    color: #295E6F;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: "Derp", Impact, sans-serif; }
-
 .btn {
   text-transform: uppercase;
   letter-spacing: 1px; }
@@ -4933,10 +4921,14 @@ a.logo {
     a.logo svg:hover {
       fill: #69b1c8; }
 
-.artboard {
+#artboard {
   border: 2px solid #818a91;
   background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat #fff;
   background-size: cover; }
+  #artboard .cover-headline {
+    font-family: "Derp", Impact, sans-serif;
+    color: white;
+    font-size: 30px; }
 
 .modal img {
   max-width: 100%;

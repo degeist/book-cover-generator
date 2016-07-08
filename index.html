@@ -12,10 +12,24 @@ title: Boilerplate
 
   <a href="#" class="social__link" data-toggle="modal" data-target="#backgroundUploadModal"><svg class="icon-camera59"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-camera59"></use></svg></a>
   <img src="/img/artboard/dummy-cutout.png" />
-  <h1 class="text-xs-center">Lorem Ipsum</h1>
-      <a href="#" class="social__link"><svg class="icon-pencil"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-pencil"></use></svg></a>
+  <div class="cover-headline text-xs-center">
+    <p>
+      Lorem Ipsum
+    </p>
+    <p id="user-title-text">Edit me</p>
+    <a href="#" class="social__link"><svg class="icon-pencil"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-pencil"></use></svg></a>
+  </div>
+
       <!-- https://vitalets.github.io/x-editable/ -->
       <!-- https://github.com/tsayen/dom-to-image -->
+
+      <script type="text/javascript">
+      var replaceWith = $('<input name="temp" type="text" />'),
+          connectWith = $('input[name="hiddenField"]');
+
+      $('#user-title-text').inlineEdit(replaceWith, connectWith);
+      </script>
+
 
 </section>
 <footer>

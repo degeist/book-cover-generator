@@ -30,19 +30,3 @@ body {
 h1,h2,h3, h4 {
   text-transform: uppercase;
 }
-
-
-.pull-quote {
-  font-family: $base-font-family;
-  color: $brand-primary;
-  font-size: 1.2rem;
-  font-weight: 300;
-
-  &__name {
-    font-size: .9rem;
-    color: $brand-primary;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: $headings-font-family;
-  }
-}
