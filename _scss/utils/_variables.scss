@@ -17,17 +17,13 @@ $brand-warning:             #f0ad4e;
 $brand-danger:              #d9534f;
 
 // Typography
-$base-font-family:            "Derp", serif;
-$headings-font-family:        "Derp", sans-serif;
+$base-font-family:            -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+$headings-font-family:        "Derp", Impact, sans-serif;
 
 // Buttons
 $btn-secondary-color:            #fff;
 $btn-secondary-bg:               $brand-secondary;
 $btn-secondary-border:           $brand-secondary;
-
-// Misc.
-$border-radius:               0 !default;
-
 
 // Non-Bootstrap variables
 $simple-font-family:          -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
@@ -37,5 +33,3 @@ $twitter_color:               hsla(198, 100%, 47%, 1);    // #00a9f1
 $youtube_color:               hsla(0, 100%, 60%, 1);      // #ff3333
 $pinterest_color:             hsla(0, 78%, 45%, 1);       // #ce1a19
 $instagram_color:             hsla(208, 46%, 41%, 1);     // #396d9a
-
-$max-width-content:           480px;

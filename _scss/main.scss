@@ -7,6 +7,7 @@
 
 // Elements
 @import "elements/buttons";
+@import "vendor/dragndrop";
 
 // includes
 @import "includes/icons";
@@ -15,6 +16,8 @@
 @import "sections/footer";
 @import "sections/nav";
 @import "sections/artboard/artboard";
+@import "sections/upload-modal/modal";
+@import "sections/upload-modal/dragndrop";
 
 // For developement
 // body * {
