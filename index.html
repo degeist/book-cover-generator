@@ -9,15 +9,16 @@ title: Boilerplate
     </div>
 </header>
 <section id="artboard" class="p-a-3 artboard">
-
-  <a href="#" class="social__link" data-toggle="modal" data-target="#backgroundUploadModal"><svg class="icon-camera59"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-camera59"></use></svg></a>
-  <img src="/img/artboard/dummy-cutout.png" />
-  <div class="cover-headline text-xs-center">
+  <div class="artboard__background-upload-link">
+    <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal"><svg class="icon-camera59"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-camera59"></use></svg></a>
+  </div>
+  <img src="/img/artboard/dummy-cutout.png" class="artboard__cutouts" alt="Cutout"/>
+  <div class="artboard__headline text-xs-center">
     <p>
       Lorem Ipsum
     </p>
     <p id="userCoverTextEditable">Edit me</p>
-    <a href="#" class="social__link"><svg class="icon-pencil"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-pencil"></use></svg></a>
+    <!-- <a href="#" class="artboard__icon artboard__icon--edit"><svg class="icon-pencil"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-pencil"></use></svg></a> -->
   </div>
 
       <!-- https://vitalets.github.io/x-editable/ -->
@@ -33,7 +34,7 @@ title: Boilerplate
 
 </section>
 <footer>
-
+ <small>Copyright | Terms | Etc</small>
 </footer>
 
 {% include modal.html %}

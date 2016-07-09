@@ -4812,6 +4812,11 @@ h1, h2, h3, h4 {
   .btn:hover {
     text-decoration: none; }
 
+.artboard__icon svg {
+  fill: white; }
+  .artboard__icon svg--edit {
+    display: inline-block; }
+
 /*
 * The MIT License
 * Copyright (c) 2012 Matias Meno <m@tias.me>
@@ -4921,14 +4926,36 @@ a.logo {
     a.logo svg:hover {
       fill: #69b1c8; }
 
-#artboard {
+.artboard {
+  max-width: 500px;
+  margin: 0 auto;
   border: 2px solid #818a91;
   background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat #fff;
-  background-size: cover; }
-  #artboard .cover-headline {
+  background-size: cover;
+  position: relative; }
+  .artboard__background-upload-link {
+    position: absolute;
+    left: 1rem;
+    top: 1rem; }
+  .artboard__cutouts {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto; }
+  .artboard__headline {
     font-family: "Derp", Impact, sans-serif;
     color: white;
     font-size: 30px; }
+  .artboard input[type="text"] {
+    appearance: none;
+    background: transparent;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    font-size: inherit;
+    text-align: center; }
+  .artboard input[type="text"]:focus {
+    outline: none; }
 
 .modal img {
   max-width: 100%;
