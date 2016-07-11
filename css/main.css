@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Derp;
+  font-family: Custom;
   src: url("/fonts/beyond_the_mountains.ttf") format("truetype"); }
 
 /*!
@@ -405,7 +405,7 @@ output {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: "Derp", Impact, sans-serif;
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
@@ -4814,8 +4814,31 @@ h1, h2, h3, h4 {
 
 .artboard__icon svg {
   fill: white; }
-  .artboard__icon svg--edit {
-    display: inline-block; }
+
+.artboard__icon--edit svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px; }
+
+/* The ribbons */
+.corner-ribbon {
+  width: 200px;
+  background: #295E6F;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: fixed;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  top: 25px;
+  left: -50px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg); }
 
 /*
 * The MIT License
@@ -4872,32 +4895,14 @@ h1, h2, h3, h4 {
 
 footer {
   text-align: center; }
-  footer .social {
+  footer ul {
     list-style-type: none;
     margin: 0;
     padding: 1rem 0; }
-    footer .social li {
+    footer ul li {
       display: inline-block;
       vertical-align: top;
       margin: 0 0.125rem; }
-    footer .social__link {
-      display: block;
-      width: 34px;
-      height: 34px;
-      line-height: 44px;
-      margin: 0 auto;
-      text-align: center;
-      border-radius: 100%;
-      background-color: #818a91; }
-      footer .social__link:hover {
-        background-color: #295E6F; }
-    footer .social svg {
-      fill: white;
-      width: 22px;
-      height: 22px;
-      background-color: transparent; }
-  footer .ebury-logo {
-    width: 50px; }
 
 .navbar .btn {
   font-size: 0.875rem;
@@ -4928,34 +4933,48 @@ a.logo {
 
 .artboard {
   max-width: 500px;
+  min-height: 600px;
   margin: 0 auto;
-  border: 2px solid #818a91;
-  background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat #fff;
+  border: 4px solid white;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat transparent;
   background-size: cover;
   position: relative; }
   .artboard__background-upload-link {
     position: absolute;
     left: 1rem;
     top: 1rem; }
+    .artboard__background-upload-link a {
+      display: inline-block;
+      outline: none; }
   .artboard__cutouts {
-    max-width: 250px;
     height: auto;
+    width: 250px;
     display: block;
-    margin: 0 auto; }
-  .artboard__headline {
-    font-family: "Derp", Impact, sans-serif;
-    color: white;
-    font-size: 30px; }
-  .artboard input[type="text"] {
+    margin: 0 auto;
+    padding-top: 25%; }
+
+.artboard__title {
+  font-family: "Custom", Impact, sans-serif;
+  font-size: 30px;
+  color: white; }
+  .artboard__title .inline-text-edit {
+    padding: 0;
+    min-height: 40px;
+    display: inline-block; }
+  .artboard__title .inline-edit-input {
     appearance: none;
     background: transparent;
     box-shadow: none;
     border-radius: none;
     border: none;
+    display: inline-block;
     font-size: inherit;
-    text-align: center; }
-  .artboard input[type="text"]:focus {
+    text-align: center;
     outline: none; }
+    .artboard__title .inline-edit-input:focus {
+      outline: none;
+      border: none; }
 
 .modal img {
   max-width: 100%;

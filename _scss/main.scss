@@ -5,18 +5,23 @@
 // Globals
 @import "globals/typography";
 
+// Mixins
+@import "utils/mixins/box-shadow";
+
 // Elements
 @import "elements/buttons";
 @import "elements/icons";
+@import "elements/ribbons";
 @import "vendor/dragndrop";
 
-// includes
+// Includes
 @import "includes/icons";
 
 // Global layout template
 @import "sections/footer";
 @import "sections/nav";
 @import "sections/artboard/artboard";
+@import "sections/artboard/title";
 @import "sections/upload-modal/modal";
 @import "sections/upload-modal/dragndrop";
 
