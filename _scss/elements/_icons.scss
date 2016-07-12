@@ -1,0 +1,11 @@
+.artboard__icon {
+  svg {
+    fill: white;
+  }
+
+  &--edit svg {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+  }
+}

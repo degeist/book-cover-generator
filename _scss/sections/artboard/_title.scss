@@ -1,0 +1,28 @@
+.artboard__title {
+    font-family: $custom-font-family;
+    font-size: 30px;
+    color: white;
+
+      .inline-text-edit {
+        padding: 0;
+        min-height: 40px;
+        display: inline-block;
+      }
+
+      .inline-edit-input {
+        appearance: none;
+        background: transparent;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        display: inline-block;
+        font-size: inherit;
+        text-align: center;
+        outline: none;
+        &:focus {
+          outline: none;
+          border: none;
+        }
+
+      }
+  }
