@@ -4840,6 +4840,15 @@ h1, h2, h3, h4 {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg); }
 
+.inline-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 1rem 0; }
+  .inline-list li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0.125rem; }
+
 /*
 * The MIT License
 * Copyright (c) 2012 Matias Meno <m@tias.me>
@@ -4895,14 +4904,6 @@ h1, h2, h3, h4 {
 
 footer {
   text-align: center; }
-  footer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 1rem 0; }
-    footer ul li {
-      display: inline-block;
-      vertical-align: top;
-      margin: 0 0.125rem; }
 
 .navbar .btn {
   font-size: 0.875rem;
@@ -4987,6 +4988,9 @@ a.logo {
   width: 100%; }
   .dropzone .dz-default {
     text-align: center; }
+
+.social {
+  text-align: center; }
 
 .no-gutter > [class*='col-'] {
   padding-right: 0;
