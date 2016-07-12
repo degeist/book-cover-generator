@@ -4977,6 +4977,9 @@ a.logo {
       outline: none;
       border: none; }
 
+.modal-header {
+  border-bottom: none; }
+
 .modal img {
   max-width: 100%;
   height: auto; }

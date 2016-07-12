@@ -1,4 +1,8 @@
 .modal {
+  &-header {
+    border-bottom: none;
+  }
+
   img {
     max-width: 100%;
     height: auto;

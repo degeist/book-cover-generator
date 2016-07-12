@@ -1,0 +1,11 @@
+.inline-list {
+  list-style-type: none;
+  margin: 0;
+  padding: $spacer-x 0;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 $spacer-x/8;
+  }
+}
