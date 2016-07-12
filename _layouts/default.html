@@ -62,8 +62,38 @@
     <!-- <link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/css/jquery-editable.css" rel="stylesheet"/>
     <script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/jquery-editable/js/jquery-editable-poshytip.min.js"></script> -->
     <script src="{{ "/js/vendor/jquery.inline-edit.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/vendor/jquery.ui.widget.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/vendor/jquery.iframe-transport.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/vendor/jquery.fileupload.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/ui.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/dropzone.js" | prepend: site.baseurl }}"></script>
+    <script>
+/*jslint unparam: true */
+/*global window, $ */
+$(function () {
+    'use strict';
+    // Change this to the location of your server-side upload handler:
+    var url = window.location.hostname === 'blueimp.github.io' ?
+                '//jquery-file-upload.appspot.com/' : 'server/php/';
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+            });
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+        .parent().addClass($.support.fileInput ? undefined : 'disabled');
+});
+</script>
 
   </head>
   <body>
