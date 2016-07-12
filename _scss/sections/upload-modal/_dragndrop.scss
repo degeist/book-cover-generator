@@ -1,9 +1,54 @@
+
+/*
+ * jQuery File Upload Plugin CSS
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
 .dropzone {
-  border: 2px dashed #0087F7;
+  border: 2px dashed $brand-primary;
   border-radius: 5px;
   background: white;
+  display: inline-block;
   width: 100%;
-  .dz-default {
+  position: relative;
+  overflow: hidden;
+  padding: $spacer-y*2 $spacer-x;
+
+  span {
+    display: block;
     text-align: center;
+  }
+
+  &:hover {
+    background-color: $gray-lightest;
+    cursor: pointer;
+  }
+
+  input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer;
+  }
+
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .dropzone input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
   }
 }

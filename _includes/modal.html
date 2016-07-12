@@ -10,9 +10,19 @@
       <div class="modal-body p-a-3">
         <div class="container-fluid">
           <div class="row">
-            <form id="backgroundImageUpload" action="/target" class="dropzone p-a-3"></form>
+            <span class="dropzone">
+                <span>Drag image here or click to upload</span>
+                <!-- The file input field used as target for the file upload widget -->
+                <input id="fileupload" type="file" name="files[]" multiple>
+            </span>
+            <!-- The global progress bar -->
+            <div id="progress" class="progress">
+                <div class="progress-bar progress-bar-success"></div>
+            </div>
+
           </div>
-            <p class="lead">
+
+            <p class="lead text-xs-center">
               ... or select one of ours
             </p>
             <div class="row">

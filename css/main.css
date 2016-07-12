@@ -4849,90 +4849,6 @@ h1, h2, h3, h4 {
     vertical-align: top;
     margin: 0 0.125rem; }
 
-/*
-* The MIT License
-* Copyright (c) 2012 Matias Meno <m@tias.me>
-*/
-.dropzone, .dropzone * {
-  box-sizing: border-box; }
-
-.dropzone {
-  position: relative; }
-
-.dropzone .dz-preview {
-  position: relative;
-  display: inline-block;
-  width: 120px;
-  margin: 0.5em; }
-
-.dropzone .dz-preview .dz-progress {
-  display: block;
-  height: 15px;
-  border: 1px solid #aaa; }
-
-.dropzone .dz-preview .dz-progress .dz-upload {
-  display: block;
-  height: 100%;
-  width: 0;
-  background: green; }
-
-.dropzone .dz-preview .dz-error-message {
-  color: red;
-  display: none; }
-
-.dropzone .dz-preview.dz-error .dz-error-message, .dropzone .dz-preview.dz-error .dz-error-mark {
-  display: block; }
-
-.dropzone .dz-preview.dz-success .dz-success-mark {
-  display: block; }
-
-.dropzone .dz-preview .dz-error-mark, .dropzone .dz-preview .dz-success-mark {
-  position: absolute;
-  display: none;
-  left: 30px;
-  top: 30px;
-  width: 54px;
-  height: 58px;
-  left: 50%;
-  margin-left: -27px; }
-
-/*
- * jQuery File Upload Plugin CSS
- * https://github.com/blueimp/jQuery-File-Upload
- *
- * Copyright 2013, Sebastian Tschan
- * https://blueimp.net
- *
- * Licensed under the MIT license:
- * http://www.opensource.org/licenses/MIT
- */
-.fileinput-button {
-  position: relative;
-  overflow: hidden;
-  display: inline-block; }
-
-.fileinput-button input {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  opacity: 0;
-  -ms-filter: 'alpha(opacity=0)';
-  font-size: 200px !important;
-  direction: ltr;
-  cursor: pointer; }
-
-/* Fixes for IE < 8 */
-@media screen\9 {
-  .fileinput-button input {
-    filter: alpha(opacity=0);
-    font-size: 100%;
-    height: 100%; } }
-
-.bar {
-  height: 18px;
-  background: green; }
-
 [class^="icon-"], [class*=" icon-"] {
   height: 32px;
   width: 32px;
@@ -5019,15 +4935,54 @@ a.logo {
 
 .modal img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .modal img:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 
+/*
+ * jQuery File Upload Plugin CSS
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
 .dropzone {
-  border: 2px dashed #0087F7;
+  border: 2px dashed #295E6F;
   border-radius: 5px;
   background: white;
-  width: 100%; }
-  .dropzone .dz-default {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem; }
+  .dropzone span {
+    display: block;
     text-align: center; }
+  .dropzone:hover {
+    background-color: #ccc;
+    cursor: pointer; }
+  .dropzone input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px !important;
+    direction: ltr;
+    cursor: pointer; }
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .dropzone input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%; } }
 
 .social {
   text-align: center; }
