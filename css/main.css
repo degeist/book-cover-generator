@@ -4885,28 +4885,30 @@ a.logo {
     a.logo svg:hover {
       fill: #69b1c8; }
 
-.artboard {
-  max-width: 500px;
-  min-height: 600px;
-  margin: 0 auto;
+#artboard {
+  width: 500px;
+  height: 700px;
+  margin: 0;
   border: 4px solid white;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat transparent;
   background-size: cover;
   position: relative; }
-  .artboard__background-upload-link {
-    position: absolute;
-    left: 1rem;
-    top: 1rem; }
-    .artboard__background-upload-link a {
-      display: inline-block;
-      outline: none; }
-  .artboard__cutouts {
-    height: auto;
-    width: 250px;
-    display: block;
-    margin: 0 auto;
-    padding-top: 25%; }
+
+.artboard__background-upload-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem; }
+  .artboard__background-upload-link a {
+    display: inline-block;
+    outline: none; }
+
+.artboard__cutouts {
+  height: auto;
+  width: 125px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 25%; }
 
 .artboard__title {
   font-family: "Custom", Impact, sans-serif;

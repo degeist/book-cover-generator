@@ -64,8 +64,34 @@
     <script src="{{ "/js/vendor/fileuploader/jquery.fileupload.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/ui.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/dropzone.js" | prepend: site.baseurl }}"></script>
+    <script src="bower_components/file-saver/FileSaver.js" /> </script>
+    <script src="bower_components/dom-to-image/src/dom-to-image.js" /> </script>
+
   </head>
   <body>
     {{ content }}
   </body>
+
+  <script>
+  $('#artboard').ready(function() {
+    var node = document.getElementById('artboard');
+    console.log('doodooright1');
+
+    // domtoimage.toBlob(document.getElementById('artboard'), {'height': '700', 'width': '500'})
+    //     .then(function (blob) {
+    //         window.saveAs(blob, 'my-node.png');
+    //     });
+
+      domtoimage.toPng(node, {'height': '700', 'width': '500'})
+          .then(function (dataUrl) {
+              var img = new Image();
+              img.src = dataUrl;
+              document.body.appendChild(img);
+          })
+          .catch(function (error) {
+              console.error('oops, something went wrong!', error);
+          });
+
+  });
+  </script>
 </html>
