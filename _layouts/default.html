@@ -64,8 +64,31 @@
     <script src="{{ "/js/vendor/fileuploader/jquery.fileupload.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/ui.js" | prepend: site.baseurl }}"></script>
     <script src="{{ "/js/dropzone.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/vendor/canvas2image.js" | prepend: site.baseurl }}"></script>
+
   </head>
   <body>
     {{ content }}
   </body>
+
+
+  <script>
+  console.log('image');
+
+  $(document).ready(function() {
+    var canvas = document.getElementById("canvas");
+
+    function convertCanvasToImage(canvas) {
+    	var image = new Image();
+    	image.src = canvas.toDataURL("image/png");
+      return image;
+    }
+
+    var convertedImg = convertCanvasToImage(canvas);
+
+    $('#output').append(convertedImg);
+  });
+
+  </script>
+
 </html>

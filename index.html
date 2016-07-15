@@ -9,7 +9,7 @@ title: Book Cover Generator
         </div>
     </div>
 </header>
-<section id="artboard" class="artboard">
+<!-- <section id="artboard" class="artboard">
   <div class="artboard__background-upload-link" data-toggle="tooltip" data-placement="right" title="Upload a background">
     <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal">
       <svg class="icon-camera59"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-camera59"></use></svg></a>
@@ -24,19 +24,36 @@ title: Book Cover Generator
       <svg class="icon-pencil"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-pencil"></use></svg>
     </span>
   </div>
+</section> -->
+<canvas id="canvas" width="500" height="700"></canvas>
 
-      <!-- https://vitalets.github.io/x-editable/ -->
-      <!-- https://github.com/tsayen/dom-to-image -->
+<div id="output">
+  
+</div>
 
-      <!-- <script type="text/javascript">
-      var replaceWith = $('<input name="temp" type="text" />'),
-          connectWith = $('input[name="hiddenField"]');
+<script>
+  var canvas = document.getElementById("canvas"),
+      ctx = canvas.getContext("2d");
 
-      $('#user-title-text').inlineEdit(replaceWith, connectWith);
-      </script> -->
+  canvas.width = 500;
+  canvas.height = 700;
+
+  var background = new Image();
+  background.src = '/img/artboard/backgrounds/dummy-bg.jpg';
+
+  var img = new Image();
+  img.src = '/img/artboard/dummy-cutout.png';
 
 
-</section>
+  background.onload = function(){
+      ctx.drawImage(background,0,0);
+      ctx.drawImage(img,75,75, 250, 500);
+  }
+
+</script>
+
+
+
 <section class="social container m-y-3 text-xs-center">
   <h3>Share your artwork!</h3>
     <ul class="social__icons p-y-3 inline-list">
