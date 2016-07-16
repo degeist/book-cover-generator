@@ -1,21 +1,23 @@
-$artboard-ratio: 1.2;
-$artboard-width: 500px;
-$artboard-height: $artboard-width * $artboard-ratio;
+$artboard-ratio: 1.5;
+$artboard-border: 4px;
+$artboard-width: 500px + 2*$artboard-border;
+$artboard-height: 700px + 2*$artboard-border;
 
 body {
   // background: url('https://static.pexels.com/photos/6663/desk-white-black-header.jpg') bottom left no-repeat transparent;
   // background-size: cover;
 }
 
+canvas {
+  font-family: $custom-font-family;
+}
+
 .artboard {
-  max-width: $artboard-width;
-  min-height: $artboard-height;
+  width: $artboard-width;
+  height: $artboard-height;
   margin: 0 auto;
   border: 4px solid white;
   @include box-shadow(4);
-  background: url('../img/artboard/backgrounds/dummy-bg.jpg') top center no-repeat transparent;
-  background-size: cover;
-  position: relative;
 
   &__background-upload-link {
     position: absolute;
@@ -25,13 +27,5 @@ body {
       display: inline-block;
       outline: none;
     }
-  }
-
-  &__cutouts {
-    height: auto;
-    width: $artboard-width / 2;
-    display: block;
-    margin: 0 auto;
-    padding-top: 25%;
   }
 }

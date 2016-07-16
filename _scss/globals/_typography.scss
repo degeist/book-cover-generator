@@ -1,5 +1,5 @@
 body {
-  font-family: $base-font-family;
+  font-family: $custom-font-family;
 }
 
 
@@ -29,4 +29,8 @@ body {
 // headings
 h1,h2,h3, h4 {
   text-transform: uppercase;
+}
+
+.masthead__heading {
+  font-family: $custom-font-family;
 }

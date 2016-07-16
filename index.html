@@ -9,27 +9,10 @@ title: Book Cover Generator
         </div>
     </div>
 </header>
-<!-- <section id="artboard" class="artboard">
-  <div class="artboard__background-upload-link" data-toggle="tooltip" data-placement="right" title="Upload a background">
-    <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal">
-      <svg class="icon-camera59"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-camera59"></use></svg></a>
-  </div>
-  <img src="/img/artboard/dummy-cutout.png" class="artboard__cutouts" alt="Cutout"/>
-  <div class="artboard__title text-xs-center">
-    <p>
-      Lorem Ipsum
-    </p>
-    <p id="userCoverTextEditable" class="inline-text-edit" data-toggle="tooltip" data-placement="bottom" title="Write your message">Edit me</p>
-    <span class="artboard__icon artboard__icon--edit">
-      <svg class="icon-pencil"><use xlink:href="{{ site.baseurl }}/img/icons/icons.svg#icon-pencil"></use></svg>
-    </span>
-  </div>
-</section> -->
 <canvas id="canvas" width="500" height="700"></canvas>
 
-<div id="output">
-  
-</div>
+<button id="copy-canvas">Copy canvas</button>
+<div id="output"></div>
 
 <script>
   var canvas = document.getElementById("canvas"),
@@ -39,20 +22,23 @@ title: Book Cover Generator
   canvas.height = 700;
 
   var background = new Image();
-  background.src = '/img/artboard/backgrounds/dummy-bg.jpg';
+  background.src = '/img/artboard/backgrounds/thumbnails/dummy-bg1.jpg';
 
   var img = new Image();
-  img.src = '/img/artboard/dummy-cutout.png';
+  img.src = '/img/artboard/dummy-cutout-small-test-version.png';
+  //'/img/artboard/dummy-cutout.png';
 
 
-  background.onload = function(){
-      ctx.drawImage(background,0,0);
+  img.onload = function(){
+      ctx.drawImage(background,0,0, 500, 700);
       ctx.drawImage(img,75,75, 250, 500);
+      ctx.font         = '68px BookType';
+      ctx.fillStyle = 'black';
+      ctx.textBaseline = 'top';
+      ctx.fillText  ('Dan & Phil', 20, 20);
   }
 
 </script>
-
-
 
 <section class="social container m-y-3 text-xs-center">
   <h3>Share your artwork!</h3>

@@ -1,6 +1,6 @@
 @font-face {
-  font-family: Custom;
-  src: url("/fonts/beyond_the_mountains.ttf") format("truetype"); }
+  font-family: BookType;
+  src: url("/fonts/beyond_the_mountains.otf") format("opentype"); }
 
 /*!
  * Bootstrap v4.0.0-alpha.2 (http://getbootstrap.com)
@@ -4786,7 +4786,7 @@ a.bg-danger:focus, a.bg-danger:hover {
     display: none !important; } }
 
 body {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif; }
+  font-family: "BookType", Impact, sans-serif; }
 
 body {
   font-size: 16px; }
@@ -4805,6 +4805,9 @@ body {
 
 h1, h2, h3, h4 {
   text-transform: uppercase; }
+
+.masthead__heading {
+  font-family: "BookType", Impact, sans-serif; }
 
 .btn {
   text-transform: uppercase;
@@ -4885,15 +4888,15 @@ a.logo {
     a.logo svg:hover {
       fill: #69b1c8; }
 
+canvas {
+  font-family: "BookType", Impact, sans-serif; }
+
 .artboard {
-  max-width: 500px;
-  min-height: 600px;
+  width: 508px;
+  height: 708px;
   margin: 0 auto;
   border: 4px solid white;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat transparent;
-  background-size: cover;
-  position: relative; }
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
   .artboard__background-upload-link {
     position: absolute;
     left: 1rem;
@@ -4901,15 +4904,9 @@ a.logo {
     .artboard__background-upload-link a {
       display: inline-block;
       outline: none; }
-  .artboard__cutouts {
-    height: auto;
-    width: 250px;
-    display: block;
-    margin: 0 auto;
-    padding-top: 25%; }
 
 .artboard__title {
-  font-family: "Custom", Impact, sans-serif;
+  font-family: "BookType", Impact, sans-serif;
   font-size: 30px;
   color: white; }
   .artboard__title .inline-text-edit {

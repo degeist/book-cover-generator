@@ -70,25 +70,27 @@
   <body>
     {{ content }}
   </body>
-
-
   <script>
-  console.log('image');
 
+  // Output canvas to datauri
   $(document).ready(function() {
     var canvas = document.getElementById("canvas");
 
     function convertCanvasToImage(canvas) {
-    	var image = new Image();
-    	image.src = canvas.toDataURL("image/png");
+      var image = new Image();
+      image.src = canvas.toDataURL("image/png");
       return image;
     }
 
     var convertedImg = convertCanvasToImage(canvas);
 
-    $('#output').append(convertedImg);
+    $('#copy-canvas').on('click', function(){
+      $('#output').append(convertedImg);
+      console.log(canvas);
+    })
   });
 
   </script>
+
 
 </html>
