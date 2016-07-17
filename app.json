@@ -1,0 +1,20 @@
+{
+  "name": "book-cover-generator",
+  "scripts": {
+  },
+  "env": {
+    "CLOUDINARY_URL": {
+      "required": true
+    }
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
