@@ -4,3 +4,9 @@ node_modules
 .DS_Store
 .sass-cache/
 .jekyll-metadata
+
+# Backend-specific
+.venv
+*.pyc
+staticfiles
+.env
