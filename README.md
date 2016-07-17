@@ -38,7 +38,7 @@ $ gulp
 ## Backend
 
 1. Download and install Python 3.5.2 from [python.org](https://www.python.org/downloads/)
-2. Download and install `virtualenv` to create a virtual environment [docs](https://virtualenv.pypa.io/en/stable/installation/)
+2. Download and install `virtualenv` to create a virtual environment ([docs](https://virtualenv.pypa.io/en/stable/installation/))
 3. Create a virtual environment:
 
 ```shell
