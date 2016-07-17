@@ -11,32 +11,14 @@ title: Book Cover Generator
 </header>
 <canvas id="canvas" width="500" height="700"></canvas>
 
+<canvas id="myCanvas" width="500" height="700"></canvas>
+<img id="canvasImg" alt="Right click to save me!">
+
+
 <button id="copy-canvas">Copy canvas</button>
 <div id="output"></div>
 
 <script>
-  var canvas = document.getElementById("canvas"),
-      ctx = canvas.getContext("2d");
-
-  canvas.width = 500;
-  canvas.height = 700;
-
-  var background = new Image();
-  background.src = '/img/artboard/backgrounds/thumbnails/dummy-bg1.jpg';
-
-  var img = new Image();
-  img.src = '/img/artboard/dummy-cutout-small-test-version.png';
-  //'/img/artboard/dummy-cutout.png';
-
-
-  img.onload = function(){
-      ctx.drawImage(background,0,0, 500, 700);
-      ctx.drawImage(img,75,75, 250, 500);
-      ctx.font         = '68px BookType';
-      ctx.fillStyle = 'black';
-      ctx.textBaseline = 'top';
-      ctx.fillText  ('Dan & Phil', 20, 20);
-  }
 
 </script>
 
