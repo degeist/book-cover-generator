@@ -53,12 +53,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-    <script src="{% 'js/vendor/jquery.inline-edit.js' %}"></script>
-    <script src="{% 'js/vendor/fileuploader/jquery.ui.widget.js' %}"></script>
-    <script src="{% 'js/vendor/fileuploader/jquery.iframe-transport.js' %}"></script>
-    <script src="{% 'js/vendor/fileuploader/jquery.fileupload.js' %}"></script>
-    <script src="{% 'js/ui.js' %}"></script>
-    <script src="{% 'js/dropzone.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.inline-edit.js' %}"></script>
+    <script src="{% static 'js/vendor/fileuploader/jquery.ui.widget.js' %}"></script>
+    <script src="{% static 'js/vendor/fileuploader/jquery.iframe-transport.js' %}"></script>
+    <script src="{% static 'js/vendor/fileuploader/jquery.fileupload.js' %}"></script>
+    <script src="{% static 'js/ui.js' %}"></script>
+    <script src="{% static 'js/dropzone.js' %}"></script>
   </head>
   <body>
     <div class="corner-ribbon">Design your cover</div>
@@ -71,16 +71,16 @@
     <section id="artboard" class="artboard">
       <div class="artboard__background-upload-link" data-toggle="tooltip" data-placement="right" title="Upload a background">
         <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal">
-          <svg class="icon-camera59"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera59'"></use></svg></a>
+          <svg class="icon-camera59"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera59' %}"></use></svg></a>
       </div>
-      <img src="{% static 'img/artboard/dummy-cutout.png'" class="artboard__cutouts" alt="Cutout"/>
+      <img src="{% static 'img/artboard/dummy-cutout.png' %}" class="artboard__cutouts" alt="Cutout"/>
       <div class="artboard__title text-xs-center">
         <p>
           Lorem Ipsum
         </p>
         <p id="userCoverTextEditable" class="inline-text-edit" data-toggle="tooltip" data-placement="bottom" title="Write your message">Edit me</p>
         <span class="artboard__icon artboard__icon--edit">
-          <svg class="icon-pencil"><use xlink:href="{% static 'img/icons/icons.svg#icon-pencil'"></use></svg>
+          <svg class="icon-pencil"><use xlink:href="{% static 'img/icons/icons.svg#icon-pencil' %}"></use></svg>
         </span>
       </div>
     </section>
@@ -88,16 +88,16 @@
       <h3>Share your artwork!</h3>
         <ul class="social__icons p-y-3 inline-list">
           <li>
-            <a href="#" class="social__link"><svg class="icon-twitter"><use xlink:href="{% static 'img/icons/icons.svg#icon-twitter'"></use></svg></a>
+            <a href="#" class="social__link"><svg class="icon-twitter"><use xlink:href="{% static 'img/icons/icons.svg#icon-twitter' %}"></use></svg></a>
           </li>
           <li>
-            <a href="#" class="social__link"><svg class="icon-facebook"><use xlink:href="{% static 'img/icons/icons.svg#icon-facebook'"></use></svg></a>
+            <a href="#" class="social__link"><svg class="icon-facebook"><use xlink:href="{% static 'img/icons/icons.svg#icon-facebook' %}"></use></svg></a>
           </li>
           <li>
-            <a href="#" class="social__link"><svg class="icon-tumblr"><use xlink:href="{% static 'img/icons/icons.svg#icon-tumblr'"></use></svg></a>
+            <a href="#" class="social__link"><svg class="icon-tumblr"><use xlink:href="{% static 'img/icons/icons.svg#icon-tumblr' %}"></use></svg></a>
           </li>
           <li>
-            <a href="#" class="social__link"><svg class="icon-download164"><use xlink:href="{% static 'img/icons/icons.svg#icon-download164'"></use></svg></a>
+            <a href="#" class="social__link"><svg class="icon-download164"><use xlink:href="{% static 'img/icons/icons.svg#icon-download164' %}"></use></svg></a>
           </li>
         </ul>
     </section>
@@ -139,13 +139,13 @@
       </p>
       <div class="row">
       <div class="col-xs-6 col-md-4">
-      <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg.jpg'" alt="image" /></a>
+      <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg.jpg' %}" alt="image" /></a>
       </div>
 
 
 
       <div class="col-xs-6 col-md-4">
-      <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg1.jpg'" alt="image" /></a>
+      <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg1.jpg' %}" alt="image" /></a>
       </div>
       </div>
       </div>
