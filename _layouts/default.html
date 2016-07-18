@@ -71,6 +71,8 @@
     {{ content }}
   </body>
   <script>
+  var dataURL = "";
+
   function loadImages(sources, callback) {
     var images = {};
     var loadedImages = 0;
@@ -90,7 +92,8 @@
     }
   }
 
-  window.onload = function(images) {
+  window.onload = function() {
+
       var canvas = document.getElementById("myCanvas");
       var ctx = canvas.getContext("2d");
 
@@ -103,59 +106,37 @@
       loadImages(sources, function(images) {
         ctx.drawImage(images.background, 0, 0, 500, 700);
         ctx.drawImage(images.overlayImg, 0, 0, 250, 250);
-        // save canvas image as data url (png format by default)
-        ctx.font         = '68px BookType';
-        ctx.fillStyle = 'black';
-        ctx.textBaseline = 'top';
+
+        // Load text
+        ctx.font          = '68px BookType';
+        ctx.fillStyle     = 'black';
+        ctx.textBaseline  = 'top';
         ctx.fillText  ('Dan & Phil', 20, 20);
+
+        console.log(dataURL)
+
         var dataURL = canvas.toDataURL();
-        // set canvasImg image src to dataURL
-        document.getElementById("canvasImg").src = dataURL;
+        console.log(dataURL)
+
+        document.getElementById("output").src = dataURL;
+
+
       });
+
+
+
+
+      $('#copy-canvas').on('click', function(){
+        console.log(dataURL);
+        // $('#output').append(convertedImg);
+        // var outputContainer = $('#output');
+        // console.log(outputContainer);
+      });
+
     };
 
 
 
-  // Output canvas to datauri
-  $(document).ready(function() {
-    var canvas = document.getElementById("canvas"),
-        ctx = canvas.getContext("2d");
-
-    canvas.width = 500;
-    canvas.height = 700;
-    //
-    // var background = new Image();
-    // background.src = '/img/artboard/dummy-cutout-small-test-version.png';
-
-    var overlayImg = new Image();
-    overlayImg.src = '/img/artboard/dummy-cutout-small-test-version.png';
-    //'/img/artboard/dummy-cutout.png';
-
-
-    overlayImg.onload = function() {
-        // ctx.drawImage(background,0,0, 500, 700);
-        ctx.drawImage(overlayImg,75,75, 250, 500);
-        ctx.font         = '68px BookType';
-        ctx.fillStyle = 'black';
-        ctx.textBaseline = 'top';
-        ctx.fillText  ('Dan & Phil', 20, 20);
-    };
-
-    // Copy canvas to image
-    function convertCanvasToImage(canvas) {
-      var image = new Image();
-      image.src = canvas.toDataURL("image/png");
-      return image;
-    };
-
-    var convertedImg = convertCanvasToImage(canvas);
-
-    $('#copy-canvas').on('click', function(){
-      $('#output').append(convertedImg);
-      console.log(canvas);
-      console.log(convertedImg);
-    })
-  });
 
   </script>
 
