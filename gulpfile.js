@@ -1,10 +1,25 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 
+// Variables
+var input = './_scss/main.scss';
+var output = './bcg/static/css/';
+var sassOptions = {
+  errLogToConsole: true,
+  outputStyle: 'expanded'
+};
+
+// Run the Gulp task
 gulp.task('styles', function() {
-    gulp.src('./_scss/main.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./bcg/static/css/'))
+  return gulp
+    .src(input)
+    .pipe(sass(sassOptions).on('error', sass.logError))
+    .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+    .pipe(gulp.dest(output))
 });
 
 //Watch task

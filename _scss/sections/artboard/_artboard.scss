@@ -2,11 +2,6 @@ $artboard-ratio: 1.2;
 $artboard-width: 500px;
 $artboard-height: $artboard-width * $artboard-ratio;
 
-body {
-  // background: url('https://static.pexels.com/photos/6663/desk-white-black-header.jpg') bottom left no-repeat transparent;
-  // background-size: cover;
-}
-
 .artboard {
   max-width: $artboard-width;
   min-height: $artboard-height;

@@ -70,9 +70,18 @@
     </div>
   </header>
   <section id="artboard" class="artboard">
-    <div class="artboard__background-upload-link" data-toggle="tooltip" data-placement="right" title="Upload a background">
+    <div class="artboard__background-upload-link">
       <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal">
-        <svg class="icon-camera59"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera59' %}"></use></svg></a>
+        <svg class="icon-camera59"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera' %}"></use></svg>
+      </a>
+      <div class="artboard__helper-text artboard__helper-text--br">
+        Upload a background!
+        <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
+
+        <div class="artboard__helper-text__icon">
+        </div>
+      </div>
+
       </div>
       <img src="{% static 'img/artboard/dummy-cutout.png' %}" class="artboard__cutouts" alt="Cutout"/>
       <div class="artboard__title text-xs-center">
@@ -98,7 +107,7 @@
           <a href="#" class="social__link"><svg class="icon-tumblr"><use xlink:href="{% static 'img/icons/icons.svg#icon-tumblr' %}"></use></svg></a>
         </li>
         <li>
-          <a href="#" class="social__link"><svg class="icon-download164"><use xlink:href="{% static 'img/icons/icons.svg#icon-download164' %}"></use></svg></a>
+          <a href="#" class="social__link"><svg class="icon-download"><use xlink:href="{% static 'img/icons/icons.svg#icon-download' %}"></use></svg></a>
         </li>
       </ul>
     </section>

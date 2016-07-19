@@ -1,0 +1,16 @@
+.artboard__helper-text {
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+
+  &--br {
+    transform: rotate(-7deg);
+    width: 150px;
+    svg  {
+      position: absolute;
+      top: -30px;
+      left: 60px;
+    }
+
+  }
+}
