@@ -1,11 +1,13 @@
 .artboard__helper-text {
   color: white;
+  display: block;
   text-transform: uppercase;
-  position: relative;
+  position: absolute;
+  width: 150px;
+  top: 32px;
 
   &--br {
     transform: rotate(-7deg);
-    width: 150px;
     svg  {
       position: absolute;
       top: -30px;

@@ -6502,7 +6502,7 @@ a.logo svg:hover {
 
 .artboard {
   max-width: 500px;
-  min-height: 600px;
+  min-height: 660px;
   margin: 0 auto;
   border: 4px solid white;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -6511,15 +6511,16 @@ a.logo svg:hover {
   position: relative;
 }
 
-.artboard__background-upload-link {
+.artboard__actionable-item a {
+  display: inline-block;
+  outline: none;
+  position: relative;
+}
+
+.artboard__actionable-item--background-upload {
   position: absolute;
   left: 1rem;
   top: 1rem;
-}
-
-.artboard__background-upload-link a {
-  display: inline-block;
-  outline: none;
 }
 
 .artboard__cutouts {
@@ -6561,14 +6562,16 @@ a.logo svg:hover {
 
 .artboard__helper-text {
   color: white;
+  display: block;
   text-transform: uppercase;
-  position: relative;
+  position: absolute;
+  width: 150px;
+  top: 32px;
 }
 
 .artboard__helper-text--br {
   -webkit-transform: rotate(-7deg);
   transform: rotate(-7deg);
-  width: 150px;
 }
 
 .artboard__helper-text--br svg {

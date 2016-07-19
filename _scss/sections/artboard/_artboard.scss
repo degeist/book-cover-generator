@@ -1,4 +1,4 @@
-$artboard-ratio: 1.2;
+$artboard-ratio: 1.32;
 $artboard-width: 500px;
 $artboard-height: $artboard-width * $artboard-ratio;
 
@@ -12,13 +12,18 @@ $artboard-height: $artboard-width * $artboard-ratio;
   background-size: cover;
   position: relative;
 
-  &__background-upload-link {
-    position: absolute;
-    left: $spacer-x;
-    top: $spacer-x;
+  &__actionable-item {
     a {
       display: inline-block;
       outline: none;
+      position: relative;
+    }
+
+    &--background-upload {
+      position: absolute;
+      left: $spacer-x;
+      top: $spacer-x;
+
     }
   }
 
