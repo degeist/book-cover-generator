@@ -6369,7 +6369,7 @@ a.bg-danger:focus, a.bg-danger:hover {
 }
 
 body {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+  font-family: "Open Sans", -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 
 body {
@@ -6419,23 +6419,18 @@ h1, h2, h3, h4 {
 
 /* The ribbons */
 .corner-ribbon {
-  width: 200px;
+  width: 300px;
   background: #295E6F;
-  position: absolute;
-  top: 25px;
-  left: -50px;
+  top: 50px;
+  left: -75px;
   text-align: center;
   line-height: 50px;
-  letter-spacing: 1px;
   color: #f0f0f0;
-  transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   position: fixed;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-  top: 25px;
-  left: -50px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+  z-index: 2000;
 }
 
 .inline-list {
@@ -6455,6 +6450,12 @@ h1, h2, h3, h4 {
   width: 32px;
   display: inline-block;
   fill: currentColor;
+}
+
+.masthead__welcome {
+  width: 100%;
+  font-weight: 700;
+  text-transform: none;
 }
 
 footer {
@@ -6553,7 +6554,7 @@ a.logo svg:hover {
 }
 
 .artboard__title .inline-text-edit {
-  font-family: "Custom", Impact, sans-serif;
+  font-family: "Open Sans", "Custom", sans-serif;
   padding: 0;
   min-height: 40px;
   font-size: 24px;
