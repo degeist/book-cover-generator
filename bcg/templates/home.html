@@ -14,32 +14,20 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
-  <link rel="apple-touch-icon" sizes="57x57" href="{% static 'img/favicons/apple-icon-57x57.png' %}">
-  <link rel="apple-touch-icon" sizes="60x60" href="{% static 'img/favicons/apple-icon-60x60.png' %}">
-  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'img/favicons/apple-icon-72x72.png' %}">
-  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/favicons/apple-icon-76x76.png' %}">
-  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'img/favicons/apple-icon-114x114.png' %}">
-  <link rel="apple-touch-icon" sizes="120x120" href="{% static 'img/favicons/apple-icon-120x120.png' %}">
-  <link rel="apple-touch-icon" sizes="144x144" href="{% static 'img/favicons/apple-icon-144x144.png' %}">
-  <link rel="apple-touch-icon" sizes="152x152" href="{% static 'img/favicons/apple-icon-152x152.png' %}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/favicons/apple-icon-180x180.png' %}">
-  <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'img/favicons/android-icon-192x192.png' %}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicons/favicon-32x32.png' %}">
-  <link rel="icon" type="image/png" sizes="96x96" href="{% static 'img/favicons/favicon-96x96.png' %}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicons/favicon-16x16.png' %}">
+
 
   <!-- / Facebook Open Graph shares -->
   <meta content="" property="og:title">
   <meta content="" property="og:url">
   <meta content="" property="og:site_name">
   <meta content="" property="og:description">
-  <meta content="{% static 'img/social-media/fb.jpg' %}" property="og:image">
+  <meta content="{% static 'img/artboard/dummy-cutout.png' %}" property="og:image">
   <!-- / Twitter cards -->
   <meta content="summary_large_image" name='twitter:card'>
   <meta content="@" name='twitter:site'>
   <meta content="" name='twitter:title'>
   <meta content="" name='twitter:description'>
-  <meta content="{% static 'img/social-media/twitter.jpg' %}" name='twitter:image'>
+  <meta content="{% static 'img/artboard/dummy-cutout.png' %}" name='twitter:image'>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,16 +58,14 @@
     </div>
   </header>
   <section id="artboard" class="artboard">
-    <div class="artboard__title text-xs-center">
-      <p>
-        Lorem Ipsum
-      </p>
+    <div class="artboard__title  artboard__actionable-item--title text-xs-center">
+      <img src="{% static 'img/artboard/danphil-headline.png' %}" class="artboard__title__static" alt="Cutout"/>
       <p id="userCoverTextEditable" class="inline-text-edit" data-toggle="tooltip" data-placement="bottom" title="Write your message">Edit me</p>
-      <span class="artboard__icon artboard__icon--edit">
-        <svg class="icon-pencil"><use xlink:href="{% static 'img/icons/icons.svg#icon-pencil' %}"></use></svg>
+      <span class="artboard__helper-text artboard__helper-text--bl">
+        Write some text
+        <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
       </span>
     </div>
-    <img src="{% static 'img/artboard/dummy-cutout.png' %}" class="artboard__cutouts" alt="Cutout"/>
     <div class="artboard__actionable-item artboard__actionable-item--background-upload">
       <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal">
         <svg class="icon-camera"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera' %}"></use></svg>
@@ -89,23 +75,18 @@
         </span>
       </a>
     </div>
+    <div class="artboard__actionable-item artboard__actionable-item--cutouts-selector">
+      <img src="{% static 'img/artboard/dummy-cutout.png' %}" class="artboard__cutouts" alt="Cutout"/>
+      <span class="artboard__helper-text artboard__helper-text--tl">
+        Select your DP
+        <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
+      </span>
+
+
+    </div>
     </section>
     <section class="social container m-y-3 text-xs-center">
-      <h3>Share your artwork!</h3>
-      <ul class="social__icons p-y-3 inline-list">
-        <li>
-          <a href="#" class="social__link"><svg class="icon-twitter"><use xlink:href="{% static 'img/icons/icons.svg#icon-twitter' %}"></use></svg></a>
-        </li>
-        <li>
-          <a href="#" class="social__link"><svg class="icon-facebook"><use xlink:href="{% static 'img/icons/icons.svg#icon-facebook' %}"></use></svg></a>
-        </li>
-        <li>
-          <a href="#" class="social__link"><svg class="icon-tumblr"><use xlink:href="{% static 'img/icons/icons.svg#icon-tumblr' %}"></use></svg></a>
-        </li>
-        <li>
-          <a href="#" class="social__link"><svg class="icon-download"><use xlink:href="{% static 'img/icons/icons.svg#icon-download' %}"></use></svg></a>
-        </li>
-      </ul>
+      <a href="#" class="btn btn-primary btn-lg">I'm done. Share this image</a>
     </section>
     <footer class="m-t-3">
       <div class="container">
@@ -147,9 +128,6 @@
                 <div class="col-xs-6 col-md-4">
                   <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg.jpg' %}" alt="image" /></a>
                 </div>
-
-
-
                 <div class="col-xs-6 col-md-4">
                   <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg1.jpg' %}" alt="image" /></a>
                 </div>

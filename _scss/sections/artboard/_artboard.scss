@@ -13,25 +13,39 @@ $artboard-height: $artboard-width * $artboard-ratio;
   position: relative;
 
   &__actionable-item {
+    position: relative;
+
     a {
       display: inline-block;
       outline: none;
       position: relative;
     }
 
+    &--title {
+      position: relative;
+    }
+
     &--background-upload {
       position: absolute;
-      left: $spacer-x;
-      top: $spacer-x;
+      width: 100%;
+      text-align: center;
+      top: 200px;
+    }
 
+    &--cutouts-selector {
+      display: block;
+      width: 100%;
+      text-align: center;
+      position: absolute;
+      bottom: $spacer-y;
+      text-align: center;
     }
   }
 
   &__cutouts {
     height: auto;
-    width: $artboard-width / 2;
-    display: block;
+    width: $artboard-width * .4;
     margin: 0 auto;
-    padding-top: 25%;
+    display: block;
   }
 }

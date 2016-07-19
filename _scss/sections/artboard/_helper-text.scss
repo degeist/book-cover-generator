@@ -6,13 +6,31 @@
   width: 150px;
   top: 32px;
 
+  svg {
+    position: absolute;
+    top: -30px;
+    left: 60px;
+  }
+
   &--br {
     transform: rotate(-7deg);
-    svg  {
-      position: absolute;
-      top: -30px;
-      left: 60px;
-    }
+  }
 
+  &--bl {
+    transform: rotate(-3deg);
+    top: 150px;
+    left: 40px;
+    svg  {
+      transform: scaleX(-1);
+    }
+  }
+
+  &--tl {
+    transform: rotate(7deg);
+    top: 150px;
+    left: 10px;
+    svg {
+      transform: scaleX(-1);
+    }
   }
 }
