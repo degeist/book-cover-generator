@@ -3,14 +3,10 @@ $(document).ready(function() {
   $('.select-background').click(function() {
     var chosenImg = $(this).find('img').attr('src');
     var chosenImgParent = chosenImg.replace('/thumbnails', '');
-    $('#artboard').css("background-image", "url(" + chosenImgParent +")");
     $('#backgroundUploadModal').modal('hide');
   })
 
   // Inline text edit
   $('#userCoverTextEditable').inlineEdit('click');
-
-  // Init tooltips
-  $('[data-toggle="tooltip"]').tooltip();
 
 });
