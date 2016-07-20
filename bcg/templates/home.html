@@ -58,13 +58,8 @@
     </div>
   </header>
   <section id="artboard" class="artboard">
-    <div class="artboard__title  artboard__actionable-item--title text-xs-center">
-      <img src="{% static 'img/artboard/danphil-headline.png' %}" class="artboard__title__static" alt="Cutout"/>
-      <p id="userCoverTextEditable" class="inline-text-edit">go outside</p>
-      <span class="artboard__helper-text artboard__helper-text--bl">
-        Write some text
-        <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
-      </span>
+    <div class="artboard__title">
+      <img src="{% static 'img/artboard/danphil-headline.png' %}" class="artboard__title__static" alt="Dan and Phil"/>
     </div>
     <div class="artboard__actionable-item artboard__actionable-item--background-upload">
       <a href="#" class="artboard__icon" data-toggle="modal" data-target="#backgroundUploadModal">
@@ -81,9 +76,18 @@
         Select your DP
         <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
       </span>
-
-
     </div>
+    <div class="artboard__subtitle">
+      <div class="artboard__actionable-item--title text-xs-center">
+        <p id="userCoverTextEditable" class="inline-text-edit">go outside</p>
+          <span class="artboard__helper-text artboard__helper-text--bl">
+            Write some text
+            <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
+          </span>
+      </div>
+    </div>
+
+
     </section>
     <section class="social container m-y-3 text-xs-center">
       <a href="#" class="btn btn-primary btn-lg">I'm done. Share this image</a>
