@@ -1,5 +1,8 @@
-.artboard__title {
-  position: relative;
+.artboard__subtitle {
+  position: absolute;
+  display: block;
+  width: 100%;
+  bottom: $spacer-y;
 
       .inline-text-edit {
         font-family: $custom-font-family;
@@ -9,6 +12,7 @@
         font-size: 24px;
         color: white;
         display: inline-block;
+        text-transform: uppercase;
       }
 
       .inline-edit-input {
@@ -20,17 +24,11 @@
         display: inline-block;
         font-size: inherit;
         text-align: center;
+        text-transform: uppercase;
         outline: none;
         &:focus {
           outline: none;
           border: none;
         }
-      }
-
-      &__static {
-        width: $artboard-width * 0.8;
-        display: block;
-        margin: $spacer-y auto;
-
       }
   }
