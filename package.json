@@ -1,0 +1,32 @@
+{
+  "name": "book-cover-generator",
+  "version": "1.0.0",
+  "description": "=============================",
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "cloudinary": "^1.4.1",
+    "dom-to-image": "^2.4.0",
+    "browser-sync": "^1.9.2",
+    "gulp-autoprefixer": "^1.0.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^1.0.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/degeist/book-cover-generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/degeist/book-cover-generator/issues"
+  },
+  "homepage": "https://github.com/degeist/book-cover-generator#readme"
+}
