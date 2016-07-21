@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic', # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'django.contrib.staticfiles',
     'artboard',
+    'cloudinary',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -124,3 +125,9 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY = {
+  'cloud_name': 'geist',  
+  'api_key': '778995795312484',  
+  'api_secret': 'rwBjie-PuhVHNtwXgUmXCe5IO5o',  
+}
