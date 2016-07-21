@@ -1,11 +1,16 @@
-.artboard__title {
-    font-family: $custom-font-family;
-    font-size: 30px;
-    color: white;
+.artboard__subtitle {
+  position: absolute;
+  display: block;
+  width: 100%;
+  top: $artboard-height * .85;
 
       .inline-text-edit {
+        font-family: $custom-font-family;
+        font-weight: 700;
         padding: 0;
         min-height: 40px;
+        font-size: 24px;
+        color: white;
         display: inline-block;
       }
 
@@ -23,6 +28,5 @@
           outline: none;
           border: none;
         }
-
       }
   }
