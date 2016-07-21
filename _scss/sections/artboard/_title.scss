@@ -1,32 +1,25 @@
-.artboard__subtitle {
-  position: absolute;
-  display: block;
-  width: 100%;
-  top: $artboard-height * .85;
+.inline-text-edit {
+  font-family: $custom-font-family;
+  font-weight: 700;
+  padding: 0;
+  min-height: 40px;
+  font-size: 28px;
+  color: white;
+  display: inline-block;
+}
 
-      .inline-text-edit {
-        font-family: $custom-font-family;
-        font-weight: 700;
-        padding: 0;
-        min-height: 40px;
-        font-size: 24px;
-        color: white;
-        display: inline-block;
-      }
-
-      .inline-edit-input {
-        appearance: none;
-        background: transparent;
-        box-shadow: none;
-        border-radius: none;
-        border: none;
-        display: inline-block;
-        font-size: inherit;
-        text-align: center;
-        outline: none;
-        &:focus {
-          outline: none;
-          border: none;
-        }
-      }
+.inline-edit-input {
+  appearance: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  display: inline-block;
+  font-size: inherit;
+  text-align: center;
+  outline: none;
+  &:focus {
+    outline: none;
+    border: none;
   }
+}

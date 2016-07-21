@@ -127,7 +127,7 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CLOUDINARY = {
-  'cloud_name': 'geist',  
-  'api_key': '778995795312484',  
-  'api_secret': 'rwBjie-PuhVHNtwXgUmXCe5IO5o',  
+  'cloud_name': 'geist',
+  'api_key': '778995795312484',
+  'api_secret': 'rwBjie-PuhVHNtwXgUmXCe5IO5o',
 }

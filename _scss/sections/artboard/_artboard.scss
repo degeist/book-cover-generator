@@ -1,9 +1,13 @@
-$artboard-ratio: 1.32;
-$artboard-width: 500px;
-$artboard-height: $artboard-width * $artboard-ratio;
+$artboard-ratio:        1.32;
+$artboard-width:        500px;
+$artboard-height:       $artboard-width * $artboard-ratio;
 $artboard-title-height: $artboard-height * 0.1;
 
+// Z-index (Bootstrap starts at 1000)
+$z-index-bg-upload:     400;
+
 .artboard {
+  // Optimise this for mobile
   max-width: $artboard-width;
   min-height: $artboard-height;
   margin: 0 auto;
@@ -14,50 +18,71 @@ $artboard-title-height: $artboard-height * 0.1;
   background-size: cover;
   position: relative;
 
-  &__title {
-    &__static {
-      height: $artboard-title-height;
-      display: block;
-      margin: $spacer-y auto;
-    }
-  }
+  // Artboard wrappers take care of placement/sizing of the element on the artboard
 
-  &__cutouts {
-    height: $artboard-height * .60;
-    width: auto;
-    margin: 0 auto;
+  &__wrapper {
+    position: absolute;
+    text-align: center;
+    width: 100%;
     display: block;
-  }
-
-  &__actionable-item {
-    position: relative;
-
-    a {
-      display: inline-block;
-      outline: none;
-      position: relative;
-    }
 
     &--title {
-      position: relative;
+        display: block;
+        margin: $spacer-y auto;
+        height: $artboard-title-height;
+        top: 0;
     }
 
     &--background-upload {
-      position: absolute;
-      width: 100%;
-      text-align: center;
-      top: calc($artboard-title-height + 2 * $spacer-y);
+      height: $icon-size; // Icon height
+      top: calc(#{$artboard-title-height} + 2* #{$spacer-y});
+      z-index: $z-index-bg-upload;
     }
 
-    &--cutouts-selector {
-      display: block;
-      width: 100%;
-      text-align: center;
-      position: absolute;
-      top: $artboard-height * .25;
-      text-align: center;
+    &--cutouts {
+      height: $artboard-height * .60;
+      top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size});
+    }
+
+    &--subtitle {
+        top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .60);
+        height: $artboard-height * .12;
     }
   }
 
+  .artboard__subtitle {
+    position: absolute;
+    display: block;
+    width: 100%;
+    top: $artboard-height * .85;
+    }
 
+  // Actionable item is wrapper for the item upon which action can be taken.
+  // Also used for positioning the helper text
+
+  &__actionable-item {
+    position: relative;
+    display: inline-block;
+
+    a {
+      outline: none;
+    }
+
+    &--background-upload {
+      width: $icon-size;
+    }
+  }
+
+  // Other elements
+
+  &__title {
+    height: 100%;
+    width: auto;
+  }
+
+  &__cutouts {
+    height:  $artboard-height * .60;
+    width: auto;
+    display: block;
+  }
 }
