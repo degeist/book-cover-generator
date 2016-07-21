@@ -1,7 +1,7 @@
 # Book Cover Generator app
 =============================
 
-A tool to generate user-generated book covers.
+A tool to create user-generated book covers and share on social media.
 
 
 ## Setting up
@@ -39,3 +39,15 @@ source .venv/bin/activate
 ```shell
 pip install -r requirements.txt
 ```
+
+
+### Database
+For image upload and handling.
+
+1. Install all dependencies: ```pip install -r requirements.txt```
+
+2. Install Postgres (protip: http://postgresapp.com/)
+
+3. Within psql, run: ```create database danandphil;```
+
+4. Run Django migrations to populate database: ```python manage.py migrate```
