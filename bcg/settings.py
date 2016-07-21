@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic', # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'django.contrib.staticfiles',
+    'artboard',
 ]
 
 MIDDLEWARE_CLASSES = [
