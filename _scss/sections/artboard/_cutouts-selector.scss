@@ -1,9 +1,19 @@
 .modal--cutouts-selector {
   &__option {
+    display: inline-block;
     max-width: 50px;
-    opacity: 0.7;
+    opacity: 0.5;
+    border: 1px solid transparent;
+    padding: $spacer/4;
+
+    &--selected {
+      border: 1px solid $gray-light;
+      border-radius: $border-radius;
+      opacity: .7;
+    }
+
     &:hover {
-      opacity: 1;
+      opacity: .7;
       cursor: pointer;
     }
   }
