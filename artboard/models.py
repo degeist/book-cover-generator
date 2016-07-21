@@ -12,3 +12,6 @@ class Artboard(models.Model):
     image = CloudinaryField('image')
     date_added = models.DateTimeField(auto_now_add=True)
     date_changed = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return 'Artboard #%d' % self.id
