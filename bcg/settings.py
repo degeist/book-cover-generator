@@ -21,6 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic', # http://whitenoise.evans.io/en/stable/django.html#using-whitenoise-in-development
     'django.contrib.staticfiles',
+    'artboard',
+    'cloudinary',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -62,7 +64,7 @@ WSGI_APPLICATION = 'bcg.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
+        'NAME': 'danandphil',
         'USER': '',
         'PASSWORD': '',
         'HOST': '127.0.0.1',
@@ -123,3 +125,9 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+CLOUDINARY = {
+  'cloud_name': 'geist',  
+  'api_key': '778995795312484',  
+  'api_secret': 'rwBjie-PuhVHNtwXgUmXCe5IO5o',  
+}

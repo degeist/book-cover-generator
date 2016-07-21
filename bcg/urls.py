@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+
 from . import views
+import artboard.views as artboard
 
 urlpatterns = [
 	url(r'^$', views.HomeView, name='home'),
+	url(r'^upload/$', artboard.upload, name='upload'),
+	url(r'^upload/complete$', artboard.direct_upload_complete, name='direct_upload_complete'),
     url(r'^admin/', admin.site.urls),
 ]
