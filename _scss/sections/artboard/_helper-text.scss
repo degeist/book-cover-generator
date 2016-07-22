@@ -8,7 +8,7 @@
   width: 150px;
   top: $icon-size;
   z-index: 500;
-  
+
   svg {
     position: absolute;
     top: -30px;
@@ -23,7 +23,7 @@
   &--bl {
     transform: rotate(-3deg);
     top: 50px;
-    left: -120px;
+    left: 0;
     svg  {
       transform: scaleX(-1);
     }

@@ -7228,7 +7228,7 @@ a.logo svg:hover {
   -webkit-transform: rotate(-3deg);
   transform: rotate(-3deg);
   top: 50px;
-  left: -120px;
+  left: 0;
 }
 
 .artboard__helper-text--bl svg {

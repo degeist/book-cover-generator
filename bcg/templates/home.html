@@ -117,33 +117,27 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h4 class="modal-title">Upload your image</h4>
           </div>
           <div class="modal-body p-a-1">
             <div class="container-fluid">
-              <div class="row">
-                <div id='direct_upload'>
-                  <form action="{% url 'direct_upload_complete' %}" method="post" enctype="multipart/form-data">
+              <p class="lead text-xs-center">
+                Upload your image...
+              </p>
+
+                <div id="direct_upload" class="row">
+                  <form action="{% url 'direct_upload_complete' %}" method="post" enctype="multipart/form-data" class="dropzone">
+                    <span>Drag image here or click to upload</span>
                     {% csrf_token %}
                     {% cloudinary_direct_upload_field request=request %}
                   </form>
                 </div>
-
-                <!-- <span class="dropzone"> -->
-
-                  <!-- <span>Drag image here or click to upload</span> -->
-                  <!-- The file input field used as target for the file upload widget -->
-                  <!-- <input id="fileupload" type="file" name="files[]" multiple> -->
-                <!-- </span> -->
-              </div>
-
               <progress class="progress">
                 <div class="progress">
                   <span class="progress-bar progress-bar-success"></span>
                 </div>
               </progress>
 
-              <p class="lead text-xs-center">
+              <p class="lead text-xs-center m-y-2">
                 ... or select one of ours
               </p>
               <div class="row">
