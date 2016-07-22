@@ -1,25 +1,33 @@
 .inline-text-edit {
   font-family: $custom-font-family;
   font-weight: 700;
-  padding: 0;
-  min-height: 40px;
+  padding: 1px; // Add padding to avoid the box "popping", when inline input box is inserted inside p element. Gets remove/re-added in JS
+  height: $artboard-subtitle-height;
   font-size: 28px;
   color: white;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .inline-edit-input {
+  border: none;
   appearance: none;
   background: transparent;
-  box-shadow: none;
-  border-radius: none;
-  border: none;
-  display: inline-block;
+  outline: none;
   font-size: inherit;
   text-align: center;
-  outline: none;
+  width: 100%;
+  color: white;
   &:focus {
-    outline: none;
-    border: none;
+    // outline: none;
+    // border: none;
   }
+
+}
+
+.artboard__subtitle__word-counter {
+    display: none;
 }

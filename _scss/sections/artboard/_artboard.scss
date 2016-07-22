@@ -3,8 +3,13 @@ $artboard-width:        500px;
 $artboard-height:       $artboard-width * $artboard-ratio;
 $artboard-title-height: $artboard-height * 0.1;
 
+$artboard-subtitle-height: calc(#{$artboard-height} - (#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .60 + 8px));
+
+
 // Z-index (Bootstrap starts at 1000)
 $z-index-bg-upload:     400;
+
+
 
 .artboard {
   // Optimise this for mobile
@@ -46,16 +51,9 @@ $z-index-bg-upload:     400;
 
     &--subtitle {
         top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .60);
-        height: $artboard-height * .12;
+        height: $artboard-subtitle-height;
     }
   }
-
-  .artboard__subtitle {
-    position: absolute;
-    display: block;
-    width: 100%;
-    top: $artboard-height * .85;
-    }
 
   // Actionable item is wrapper for the item upon which action can be taken.
   // Also used for positioning the helper text
@@ -87,6 +85,11 @@ $z-index-bg-upload:     400;
       &:hover {
         cursor: pointer;
       }
+    }
+
+    &--subtitle {
+      display: block;
+      padding: 0 $spacer-x;
     }
   }
 

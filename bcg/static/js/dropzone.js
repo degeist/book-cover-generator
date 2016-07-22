@@ -23,6 +23,13 @@
 //         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 // });
 
+function prettydump(obj) {
+  $.each(obj, function(key, value) {
+    console.log("Key: " + key + " Value: " + value);
+  });
+}
+
+
 $(function () {
   $('#direct_upload input[type="file"]')
   .cloudinary_fileupload({
@@ -54,6 +61,8 @@ $(function () {
       $(background).css("background-image", "url(" + uploadedBgImg +")");
 
       $('#backgroundUploadModal').modal('hide');
+
+      prettydump(data.result);
 
   });
 });

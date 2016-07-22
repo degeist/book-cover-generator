@@ -7123,14 +7123,7 @@ a.logo svg:hover {
 
 .artboard__wrapper--subtitle {
   top: calc(66px + 4 * 1rem + 32px + 660px * .60);
-  height: 79.2px;
-}
-
-.artboard .artboard__subtitle {
-  position: absolute;
-  display: block;
-  width: 100%;
-  top: 561px;
+  height: calc(660px - (66px + 4 * 1rem + 32px + 660px * .60 + 8px));
 }
 
 .artboard__actionable-item {
@@ -7162,6 +7155,11 @@ a.logo svg:hover {
   cursor: pointer;
 }
 
+.artboard__actionable-item--subtitle {
+  display: block;
+  padding: 0 1rem;
+}
+
 .artboard__title {
   height: 100%;
   width: auto;
@@ -7176,28 +7174,30 @@ a.logo svg:hover {
 .inline-text-edit {
   font-family: "Open Sans", "Akzidenz", sans-serif;
   font-weight: 700;
-  padding: 0;
-  min-height: 40px;
+  padding: 1px;
+  height: calc(660px - (66px + 4 * 1rem + 32px + 660px * .60 + 8px));
   font-size: 28px;
   color: white;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .inline-edit-input {
+  border: none;
   appearance: none;
   background: transparent;
-  box-shadow: none;
-  border-radius: none;
-  border: none;
-  display: inline-block;
+  outline: none;
   font-size: inherit;
   text-align: center;
-  outline: none;
+  width: 100%;
+  color: white;
 }
 
-.inline-edit-input:focus {
-  outline: none;
-  border: none;
+.artboard__subtitle__word-counter {
+  display: none;
 }
 
 .artboard__helper-text {

@@ -1,10 +1,13 @@
 // Licensed under the MIT License.
 // Copyright 2015 Sukohi Kuhoh
-// MODIFIED 
+// MODIFIED
 
 ;(function($) {
 
     $.fn.inlineEdit = function(event, options, callback) {
+
+      var wordCounter     = $('.artboard__subtitle__word-counter');
+      var paragraphClass  = $('.inline-text-edit');
 
         if(typeof(options) == 'function') {
 
@@ -20,7 +23,6 @@
         }
 
         var IE = {
-
             inputClass: 'inline-edit-input',
             statusName: 'inline-edit-status',
             show: function(target){
@@ -31,15 +33,32 @@
                     var text = $(target).text();
                     $(target).data('original-text', text)
                         .html(IE.inputTag(text, options));
+                    // Remove padding, so box does not "pop"
+                    paragraphClass
+                      .css('padding', '0');
+
+                     // Reveal word counter and set maxLength
+                    wordCounter.show();
+                    var maxLength = $('.inline-edit-input').attr('maxlength');
+                    var length = maxLength;
+
                     IE.inputChild(target)
                         .focus()
                         .val("") // Clear the text field
+                        .keyup(function() {
+                          var length = $(this).val().length;
+                          var length = maxLength-length;
+                          $('#chars').text(length);
+                        })
                         .on('blur keypress', function(e){
 
                             if(e.type == 'blur' || (e.type == 'keypress' && e.keyCode == 13)) {
 
                                 IE.hide(e, target);
 
+                                // Hide and reset counter
+                                wordCounter.hide();
+                                $('#chars').text(length);
                             }
 
                         });
@@ -68,6 +87,9 @@
                         callback(text, originalText, $(target));
 
                     }
+                    // Re-add shadow padding to text field on hide
+                    paragraphClass.css('padding', '1px');
+
 
                 }
 
@@ -116,14 +138,7 @@
 
                 }
 
-                if(type == 'textarea') {
-
-                    return '<textarea class="'+ inputClass +'" type="text"'+ attribute +'>'+ text +'</textarea>';
-
-                }
-
-                return '<input class="'+ inputClass +'" type="text" value="'+ text +'"'+ attribute +'>';
-
+                return '<textarea class="'+ inputClass +'" type="text"'+ attribute +' maxlength="50">'+ text +'</textarea>';
             }
 
         };

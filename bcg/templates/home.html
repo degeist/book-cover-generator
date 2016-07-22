@@ -47,7 +47,6 @@
   <script src="{% static 'js/vendor/jquery.inline-edit.js' %}"></script>
   {% cloudinary_includes %}
   {% cloudinary_js_config %}
-  <script src="{% static 'js/ui.js' %}"></script>
 </head>
 <body>
   <div class="corner-ribbon">Continue to website &rarr;</div>
@@ -92,6 +91,9 @@
             Write some text
             <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
           </span>
+      </div>
+      <div class="artboard__subtitle__word-counter">
+          <span id="chars">50</span> characters remaining
       </div>
     </div>
 
@@ -182,6 +184,7 @@
     </div><!-- /.modal -->
 
   <script src="{% static 'js/dropzone.js' %}"></script>
+  <script src="{% static 'js/ui.js' %}"></script>
 
   </body>
 </html>
