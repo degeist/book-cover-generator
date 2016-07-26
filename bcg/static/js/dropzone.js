@@ -4,6 +4,14 @@ function prettydump(obj) {
   });
 }
 
+// Set empty object to contain the cloudinary variables
+// TODO set default vars
+cloudinaryVars = {};
+
+
+
+// Set basics
+
 $(function () {
   $('#direct_upload input[type="file"]')
   .cloudinary_fileupload({
@@ -37,8 +45,12 @@ $(function () {
       $('.progress').hide();
       $('#backgroundUploadModal').modal('hide');
 
+      // Set the global vars for parsing through via JS
+      cloudinaryVars.backgroundVersion    = data.result.version;
+      cloudinaryVars.backgroundID         = data.result.public_id;
+      cloudinaryVars.backgroundFileFormat = data.result.format;
 
-      prettydump(data.result);
+      //prettydump(data.result);
 
   });
 });

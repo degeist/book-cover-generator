@@ -49,15 +49,15 @@ $(document).ready(function() {
   });
 
   // Output variables
+  var finishArtboard = function() {
 
-  $('.finish').click(function() {
-    var bg = $('#artboard').css("background-image").replace('url(','').replace(')','');
-    var cutout = $('img#artboardCutout').attr('src');
-    var text = $('p#userCoverTextEditable').text();
+      var cutout = $('img#artboardCutout').attr('data-img-number');
+      var text = encodeURIComponent($('p#userCoverTextEditable').text());
+      var artboardURL = '/artboard/v' + cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
+      window.location.href=artboardURL;
+    }
 
-    alert("BackgroundURL: " + bg + "\nCutout img: " + cutout + "\nEdited text: " + text);
-
-  });
+    $('.finish').click(finishArtboard);
 
 
 });
