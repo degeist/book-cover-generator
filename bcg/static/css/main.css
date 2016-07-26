@@ -7091,9 +7091,19 @@ a.logo svg:hover {
   border: 4px solid white;
   background-color: #F5EFE9;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-  background: url("../img/artboard/backgrounds/dummy-bg.jpg") top center no-repeat transparent;
   background-size: cover;
   position: relative;
+}
+
+.artboard--work {
+  background: url("http://res.cloudinary.com/geist/image/upload/v1468772151/bg-1.jpg") top center no-repeat #F5EFE9;
+}
+
+.artboard--final {
+  max-width: auto;
+  min-height: auto;
+  width: 250px;
+  height: 330px;
 }
 
 .artboard__wrapper {
@@ -7332,6 +7342,10 @@ a.logo svg:hover {
     font-size: 100%;
     height: 100%;
   }
+}
+
+.share-artboard .social__icons {
+  margin: 0 auto;
 }
 
 .social {

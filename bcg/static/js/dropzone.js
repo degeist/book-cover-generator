@@ -8,8 +8,7 @@ function prettydump(obj) {
 // TODO set default vars
 cloudinaryVars = {};
 
-// Set basics
-
+// Upload UI
 $(function () {
   $('#direct_upload input[type="file"]')
   .cloudinary_fileupload({

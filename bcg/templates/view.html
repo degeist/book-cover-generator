@@ -3,5 +3,88 @@
 {% load staticfiles %}
 
 {% block body %}
-	<img src="http://res.cloudinary.com/geist/image/upload/l_static:{{ cutout }}/l_static:danphil-headline.png,w_500,y_10,g_north/l_text:Open%20Sans_40_bold:{{ text|urlencode:"" }},g_south,y_50,w_500,c_fit,co_rgb:FFFFFF/w_500,h_660,c_fill/{{ version_id }}/{{ image_id }}.{{ image_extension }}" alt="Your finished cover" />
+	<header class="masthead">
+		<div class="container">
+			<div class="row p-y-1">
+				<h1 class="masthead__welcome text-xs-center">Share your artwork!</h1>
+			</div>
+		</div>
+	</header>
+	<section class="container">
+			<div class="row p-y-1">
+					<img class="artboard artboard--final"
+					src="http://res.cloudinary.com/geist/image/upload/l_static:{{ cutout }}/l_static:danphil-headline.png,w_500,y_10,g_north/l_text:Open%20Sans_40_bold:{{ text|urlencode:"" }},g_south,y_50,w_500,c_fit,co_rgb:FFFFFF/w_500,h_660,c_fill/{{ version_id }}/{{ image_id }}.{{ image_extension }}"
+					alt="Your finished cover" />
+			</div>
+	</section>
+	<section class="share-artboard m-y-2">
+		<div class="container">
+			<div class="row">
+				<ul class="social__icons p-y-3 inline-list">
+				  <li>
+						<a class="twitter-share-button"
+						  href="https://twitter.com/intent/tweet?text=Hello%20world"
+						  data-size="large">
+						Tweet</a>
+				  </li>
+				  <li>
+						<div class="fb-share-button"
+						data-href="https://developers.facebook.com/docs/plugins/"
+						data-layout="button"
+						data-size="large"
+						data-mobile-iframe="true">
+							<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">
+								Share
+							</a>
+						</div>
+				  </li>
+				  <li>
+						<a class="tumblr-share-button"
+							href="https://www.tumblr.com/share"
+							data-posttype="photo"
+							data-content="http://res.cloudinary.com/geist/image/upload/l_static:{{ cutout }}/l_static:danphil-headline.png,w_500,y_10,g_north/l_text:Open%20Sans_40_bold:{{ text|urlencode:"" }},g_south,y_50,w_500,c_fit,co_rgb:FFFFFF/w_500,h_660,c_fill/{{ version_id }}/{{ image_id }}.{{ image_extension }}"
+							data-caption="Dan and Phil go outside">
+						</a>
+				  </li>
+				  <li>
+						<a href="http://res.cloudinary.com/geist/image/upload/l_static:{{ cutout }}/l_static:danphil-headline.png,w_500,y_10,g_north/l_text:Open%20Sans_40_bold:{{ text|urlencode:"" }},g_south,y_50,w_500,c_fit,co_rgb:FFFFFF/w_500,h_660,c_fill/{{ version_id }}/{{ image_id }}.{{ image_extension }}" download="DanAndPhilGoOutside.jpg">
+							<svg class="icon-download"><use xlink:href="{% static 'img/icons/icons.svg#icon-download' %}"></use></svg>
+						</a>
+				  </li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- Load Tumblr -->
+	<script id="tumblr-js" async src="https://assets.tumblr.com/share-button.js"></script>
+	<!-- Load Facebook SDK for JavaScript -->
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1591616244469514";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	<!-- Load Twitter API -->
+	<script>
+	window.twttr = (function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0],
+			t = window.twttr || {};
+		if (d.getElementById(id)) return t;
+		js = d.createElement(s);
+		js.id = id;
+		js.src = "https://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js, fjs);
+
+		t._e = [];
+		t.ready = function(f) {
+			t._e.push(f);
+		};
+
+		return t;
+	}(document, "script", "twitter-wjs"));
+	</script>
 {% endblock %}
