@@ -8,8 +8,6 @@ function prettydump(obj) {
 // TODO set default vars
 cloudinaryVars = {};
 
-
-
 // Set basics
 
 $(function () {
@@ -17,10 +15,10 @@ $(function () {
   .cloudinary_fileupload({
     dropZone: '#direct_upload',
     start: function () {
-      $('.status_value').text('Starting direct upload...');
+      console.log('Starting direct upload...');
     },
     progress: function () {
-      $('.status_value').text('Uploading...');
+      console.log('Uploading...');
     },
   })
   .on('cloudinaryprogress', function (e, data) {
@@ -29,7 +27,7 @@ $(function () {
       Math.round((data.loaded * 100.0) / data.total) + '%');
   })
   .on('cloudinarydone', function (e, data) {
-      // $('.status_value').text('Updating backend...');
+      console.log('Updating backend...');
       $.post(this.form.action, $(this.form).serialize()).always(function (result, status, jqxhr) {
         $('.status_value').text(result.errors ? JSON.stringify(result.errors) : status);
       });

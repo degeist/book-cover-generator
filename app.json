@@ -1,7 +1,7 @@
 {
   "name": "book-cover-generator",
-  "scripts":{
-    "postdeploy": "python manage.py migrate",
+  "scripts": {
+    "postdeploy": "python manage.py migrate"
   },
   "env": {
     "CLOUDINARY_URL": {
