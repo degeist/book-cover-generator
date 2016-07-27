@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // Setting base vars
   var currentCutout = $('img#artboardCutout').attr('src');
-  var currentCutoutNumber = '4'; // Default is dp-cutout4.png
+  var currentCutoutNumber = '5'; // Default is dp-cutout5.png
 
   // Open the background upload modal
   $('#backgroundUpload').click(function() {
