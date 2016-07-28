@@ -1,20 +1,25 @@
 $artboard-ratio:        1.32;
 $artboard-width:        500px;
 $artboard-height:       $artboard-width * $artboard-ratio;
-$artboard-title-height: $artboard-height * 0.1;
+$artboard-title-height: $artboard-height * 0.14;
 
-$artboard-subtitle-height: calc(#{$artboard-height} - (#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .60 + 8px));
+$artboard-subtitle-height: calc(#{$artboard-height} - (#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .56 + 8px));
 
 
 // Z-index (Bootstrap starts at 1000)
 $z-index-bg-upload:     400;
 
-
-
 .artboard {
-  // Optimise this for mobile
   max-width: $artboard-width;
   min-height: $artboard-height;
+  @include media-breakpoint-up(md) {
+    max-width: none;
+    min-height: initial;
+    width: $artboard-width;
+    height: $artboard-height;
+  }
+
+  // Optimise this for mobile
   margin: 0 auto;
   border: 4px solid white;
   background-color: $brand-secondary;
@@ -27,10 +32,11 @@ $z-index-bg-upload:     400;
   }
 
   &--final {
-    max-width: auto;
-    min-height: auto;
-    width:  $artboard-width/2;
-    height: $artboard-height/2;
+    border: 4px solid lighten($brand-primary,60%);
+    display: block;
+    max-width: 100%;
+    height: auto;
+    min-height: initial;
   }
 
   // Artboard wrappers take care of placement/sizing of the element on the artboard
@@ -59,7 +65,7 @@ $z-index-bg-upload:     400;
     }
 
     &--subtitle {
-        top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .60);
+        top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .56);
         height: $artboard-subtitle-height;
     }
   }
@@ -76,9 +82,13 @@ $z-index-bg-upload:     400;
     }
 
     &--background-upload {
-      width: $icon-size;
+      width: $icon-size + 4px;
+
       svg.icon-camera {
-        fill: rgba(255,255,255, .7)
+        fill: rgba(255,255,255, .7);
+        padding: 2px;
+        border-radius: $border-radius;
+        background-color: $brand-primary;
       }
 
       &:hover {
@@ -111,7 +121,23 @@ $z-index-bg-upload:     400;
 
   &__cutouts {
     height:  $artboard-height * .60;
+    // Fit them in on smaller displays
+    @include media-breakpoint-down(md) {
+      height: $artboard-height * .55;
+    }
     width: auto;
     display: block;
   }
+
+  &__icon {
+    display: inline-block;
+  }
+}
+
+.toc {
+  display: block;
+  clear: both;
+  max-width: 300px;
+  margin: $spacer-x auto;
+  font-style: italic;
 }

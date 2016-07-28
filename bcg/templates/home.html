@@ -50,65 +50,75 @@
 </head>
 <body>
   <div class="corner-ribbon">Continue to website &rarr;</div>
-  <header class="masthead">
-    <div class="container">
-      <div class="row p-y-1">
-        <h1 class="masthead__welcome text-xs-center">Create a cover</h1>
+  <header class="masthead container p-y-1">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="masthead__welcome text-xs-center">Create a cover</h1>
+        </div>
       </div>
-    </div>
   </header>
-  <section id="artboard" class="artboard artboard--work">
-    <div class="artboard__wrapper artboard__wrapper--title">
-      <img src="{% static 'img/artboard/danphil-headline.png' %}" class="artboard__title" alt="Dan and Phil"/>
-    </div>
+  <section class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="artboard" class="artboard artboard--work">
+          <div class="artboard__wrapper artboard__wrapper--title">
+            <img src="{% static 'img/artboard/danphil-headline.png' %}" class="artboard__title" alt="Dan and Phil"/>
+          </div>
 
-    <div class="artboard__wrapper artboard__wrapper--background-upload">
-      <div class="artboard__actionable-item artboard__actionable-item--background-upload">
-        <span id="backgroundUpload" class="artboard__icon">
-          <svg class="icon-camera"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera' %}"></use></svg>
-        </span>
-        <span class="artboard__helper-text artboard__helper-text--br">
-          Upload a background!
-          <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
-        </span>
+          <div class="artboard__wrapper artboard__wrapper--background-upload">
+            <div class="artboard__actionable-item artboard__actionable-item--background-upload">
+              <span id="backgroundUpload" class="artboard__icon">
+                <svg class="icon-camera"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera' %}"></use></svg>
+              </span>
+              <span class="artboard__helper-text artboard__helper-text--br">
+                Upload a background!
+                <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="artboard__wrapper artboard__wrapper--cutouts">
+            <div class="artboard__actionable-item artboard__actionable-item--cutouts">
+              <img src="{% static 'img/artboard/dp-cutout1.png' %}" id="artboardCutout" class="artboard__cutouts" alt="Cutout" data-img-number="1" />
+              <span class="artboard__helper-text artboard__helper-text--tl">
+                Select your DP
+                <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="artboard__wrapper artboard__wrapper--subtitle">
+            <div class="artboard__actionable-item artboard__actionable-item--subtitle">
+              <p id="userCoverTextEditable" class="inline-text-edit">go outside</p>
+                <span class="artboard__helper-text artboard__helper-text--bl">
+                  Write some text
+                  <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
+                </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="artboard__subtitle__word-counter m-t-2">
+            <span id="chars">50</span> characters remaining
+        </div>
+
       </div>
     </div>
+  </section>
 
-    <div class="artboard__wrapper artboard__wrapper--cutouts">
-      <div class="artboard__actionable-item artboard__actionable-item--cutouts">
-        <img src="{% static 'img/artboard/dp-cutout1.png' %}" id="artboardCutout" class="artboard__cutouts" alt="Cutout" data-img-number="1" />
-        <span class="artboard__helper-text artboard__helper-text--tl">
-          Select your DP
-          <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
-        </span>
+  <section class="social container m-y-3 text-xs-center">
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="#" class="btn btn-primary btn-lg finish">I'm done. Share this image</a>
+          <small class="toc">By using this app, you acknowledge that you have read and accept our <a href="#" data-toggle="modal" data-target="#tocModal">terms of service</a>.</small>
+        </div>
       </div>
+  </section>
+  <footer class="m-t-3">
+    <div class="container">
+
     </div>
-
-    <div class="artboard__wrapper artboard__wrapper--subtitle">
-      <div class="artboard__actionable-item artboard__actionable-item--subtitle">
-        <p id="userCoverTextEditable" class="inline-text-edit">go outside</p>
-          <span class="artboard__helper-text artboard__helper-text--bl">
-            Write some text
-            <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
-          </span>
-      </div>
-      <div class="artboard__subtitle__word-counter">
-          <span id="chars">50</span> characters remaining
-      </div>
-    </div>
-
-    </section>
-    <section class="social container m-y-3 text-xs-center">
-      <a href="#" class="btn btn-primary btn-lg finish">I'm done. Share this image</a>
-    </section>
-    <footer class="m-t-3">
-      <div class="container">
-        <ul class="inline-list">
-          <li>Copyright</li>
-          <li>Terms</li>
-        </ul>
-      </div>
-    </footer>
+  </footer>
 
     <div id="backgroundUploadModal" class="modal fade modal--background-upload">
       <div class="modal-dialog" role="document">
@@ -181,6 +191,27 @@
                     </li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- TOC modal -->
+    <div id="tocModal" class="modal fade modal--toc">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h4 class="modal-title">Terms of Service</h4>
+          </div>
+          <div class="modal-body p-a-1">
+            <div class="container-fluid">
+              <p>
+                Lorem ipsum
+              </p>
             </div>
           </div>
         </div><!-- /.modal-content -->

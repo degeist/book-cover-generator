@@ -52,13 +52,12 @@ $(document).ready(function() {
     $(this).children('.artboard__helper-text').hide('fast');
   });
 
-  // Collect the user-selected parameters from the DOM and forward to artboard view
+  // Output variables
   var finishArtboard = function() {
-      // Collect the selected params
+
       var cutout = currentCutoutNumber;
       var text = encodeURIComponent($('p#userCoverTextEditable').text());
       var artboardURL = '/artboard/v' + cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
-      // Redirect to artboard view, where GET requst produces final version
       window.location.href=artboardURL;
     }
 

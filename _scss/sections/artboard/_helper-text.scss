@@ -33,6 +33,9 @@
     transform: rotate(7deg);
     top: 150px;
     left: -80px;
+    @include media-breakpoint-down(md) {
+      left: -20px;
+    } ;
     svg {
       transform: scaleX(-1);
     }

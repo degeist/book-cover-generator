@@ -4,6 +4,9 @@
   padding: 1px; // Add padding to avoid the box "popping", when inline input box is inserted inside p element. Gets remove/re-added in JS
   height: $artboard-subtitle-height;
   font-size: 28px;
+  @include media-breakpoint-down(md) {
+    font-size: 20px;
+  }
   color: white;
   display: block;
   width: 100%;
@@ -30,4 +33,5 @@
 
 .artboard__subtitle__word-counter {
     display: none;
+    text-align: center;
 }
