@@ -4,16 +4,20 @@
   "description": "=============================",
   "main": "index.js",
   "dependencies": {
-    "gulp": "^3.9.1",
-    "cloudinary": "^1.4.1",
-    "dom-to-image": "^2.4.0",
+    "blueimp-file-upload": "^9.12.5",
     "browser-sync": "^1.9.2",
+    "cloudinary": "^1.4.1",
+    "cloudinary-jquery-file-upload": "^2.1.2",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^1.0.0",
     "gulp-sass": "^2.3.2"
   },
   "devDependencies": {
+    "blueimp-canvas-to-blob": "^3.3.0",
+    "blueimp-load-image": "^2.6.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^1.0.1",
+    "gulp-minify": "0.0.13",
     "gulp-sass": "^2.3.2"
   },
   "scripts": {

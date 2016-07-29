@@ -7336,6 +7336,11 @@ a.logo svg:hover {
   display: none;
 }
 
+.modal--background-upload .upload-status {
+  color: #d9534f;
+  display: none;
+}
+
 /*
  * jQuery File Upload Plugin CSS
  * https://github.com/blueimp/jQuery-File-Upload

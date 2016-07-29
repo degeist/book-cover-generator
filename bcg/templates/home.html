@@ -47,6 +47,13 @@
   <script src="{% static 'js/vendor/jquery.inline-edit.js' %}"></script>
   {% cloudinary_includes %}
   {% cloudinary_js_config %}
+  <script src="{% static 'js/vendor/fileuploader/load-image.all.min.js' %}"></script>
+  <script src="{% static 'js/vendor/fileuploader/canvas-to-blob.min.js' %}"></script>
+  <script src="{% static 'js/vendor/fileuploader/jquery.fileupload-process.js' %}"></script>
+  <script src="{% static 'js/vendor/fileuploader/jquery.fileupload-image.js' %}"></script>
+  <script src="{% static 'js/vendor/fileuploader/jquery.fileupload-validate.js' %}"></script>
+  <script src="{% static 'js/fileupload.js' %}"></script>
+  <script src="{% static 'js/ui.js' %}"></script>
 </head>
 <body>
   <div class="corner-ribbon">Continue to website &rarr;</div>
@@ -141,11 +148,12 @@
                     {% cloudinary_direct_upload_field request=request %}
                   </form>
                 </div>
-              <progress class="progress">
-                <div class="progress">
-                  <span class="progress-bar progress-bar-success"></span>
-                </div>
-              </progress>
+                <div class="upload-status row" role="alert"></div>
+                <progress class="progress row">
+                  <div class="progress">
+                    <span class="progress-bar progress-bar-success"></span>
+                  </div>
+                </progress>
 
               <p class="lead text-xs-center m-y-2">
                 ... or select one of ours
@@ -217,9 +225,5 @@
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-
-  <script src="{% static 'js/dropzone.js' %}"></script>
-  <script src="{% static 'js/ui.js' %}"></script>
-
   </body>
 </html>
