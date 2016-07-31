@@ -6,6 +6,7 @@
 
     $.fn.inlineEdit = function(event, options, callback) {
 
+      var maxLength       = 40;
       var wordCounter     = $('.artboard__subtitle__word-counter');
       var paragraphClass  = $('.inline-text-edit');
 
@@ -37,10 +38,10 @@
                     paragraphClass
                       .css('padding', '0');
 
-                     // Reveal word counter and set maxLength
-                    wordCounter.show();
-                    var maxLength = $('.inline-edit-input').attr('maxlength');
-                    var length = maxLength;
+                   // Reveal word counter and set maxLength
+                   $('#chars').text(maxLength);
+                   wordCounter.show();
+                   var length = maxLength;
 
                     IE.inputChild(target)
                         .focus()
@@ -138,7 +139,7 @@
 
                 }
 
-                return '<textarea class="'+ inputClass +'" type="text"'+ attribute +' maxlength="50">'+ text +'</textarea>';
+                return '<textarea class="'+ inputClass +'" type="text"'+ attribute +' maxlength="' + maxLength + '">'+ text +'</textarea>';
             }
 
         };

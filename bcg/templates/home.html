@@ -20,16 +20,15 @@
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 
   <!-- / Facebook Open Graph shares -->
-  <meta content="" property="og:title">
-  <meta content="" property="og:url">
-  <meta content="" property="og:site_name">
-  <meta content="" property="og:description">
+  <meta content="Customise your own DAPGO cover!" property="og:title">
+  <meta content="http://danandphilgooutside.com/createacover" property="og:url">
+  <meta content="DAPGO" property="og:site_name">
+  <meta content="Create and share your own customised cover for the ‘Dan and Phil Go Outside’ photo book!" property="og:description">
   <meta content="{% static  'img/artboard/dp-cutout4.png' %}" property="og:image">
   <!-- / Twitter cards -->
   <meta content="summary_large_image" name='twitter:card'>
-  <meta content="@" name='twitter:site'>
-  <meta content="" name='twitter:title'>
-  <meta content="" name='twitter:description'>
+  <meta content="Customise your own DAPGO cover!" name='twitter:title'>
+  <meta content="Create and share your own customised cover for the ‘Dan and Phil Go Outside’ photo book!" name='twitter:description'>
   <meta content="{% static  'img/artboard/dp-cutout4.png' %}" name='twitter:image'>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -44,7 +43,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
-  <script src="{% static 'js/vendor/jquery.inline-edit.js' %}"></script>
   {% cloudinary_includes %}
   {% cloudinary_js_config %}
   <script src="{% static 'js/vendor/fileuploader/load-image.all.min.js' %}"></script>
@@ -53,14 +51,15 @@
   <script src="{% static 'js/vendor/fileuploader/jquery.fileupload-image.js' %}"></script>
   <script src="{% static 'js/vendor/fileuploader/jquery.fileupload-validate.js' %}"></script>
   <script src="{% static 'js/fileupload.js' %}"></script>
+  <script src="{% static 'js/jquery.inline-edit.js' %}"></script>
   <script src="{% static 'js/ui.js' %}"></script>
 </head>
 <body>
-  <div class="corner-ribbon">Continue to website &rarr;</div>
+  <a href="http://danandphilgooutside.com" class="corner-ribbon">PRE-ORDER DAPGO HERE!</a>
   <header class="masthead container p-y-1">
       <div class="row">
         <div class="col-xs-12">
-          <h1 class="masthead__welcome text-xs-center">Create a cover</h1>
+          <h1 class="masthead__welcome text-xs-center">Customise your own cover!</h1>
         </div>
       </div>
   </header>
@@ -78,7 +77,7 @@
                 <svg class="icon-camera"><use xlink:href="{% static 'img/icons/icons.svg#icon-camera' %}"></use></svg>
               </span>
               <span class="artboard__helper-text artboard__helper-text--br">
-                Upload a background!
+                UPLOAD A BACKGROUND
                 <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
               </span>
             </div>
@@ -88,7 +87,7 @@
             <div class="artboard__actionable-item artboard__actionable-item--cutouts">
               <img src="{% static 'img/artboard/dp-cutout1.png' %}" id="artboardCutout" class="artboard__cutouts" alt="Cutout" data-img-number="1" />
               <span class="artboard__helper-text artboard__helper-text--tl">
-                Select your DP
+                CHOOSE A DAN &amp; PHIL
                 <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
               </span>
             </div>
@@ -98,7 +97,7 @@
             <div class="artboard__actionable-item artboard__actionable-item--subtitle">
               <p id="userCoverTextEditable" class="inline-text-edit">go outside</p>
                 <span class="artboard__helper-text artboard__helper-text--bl">
-                  Write some text
+                  WRITE SOME TEXT
                   <svg class="icon-arrow"><use xlink:href="{% static 'img/icons/icons.svg#icon-arrow' %}"></use></svg>
                 </span>
             </div>
@@ -106,7 +105,7 @@
         </div>
 
         <div class="artboard__subtitle__word-counter m-t-2">
-            <span id="chars">50</span> characters remaining
+            <span id="chars"></span> characters remaining
         </div>
 
       </div>
@@ -116,15 +115,24 @@
   <section class="social container m-y-3 text-xs-center">
       <div class="row">
         <div class="col-xs-12">
-          <a href="#" class="btn btn-primary btn-lg finish">I'm done. Share this image</a>
-          <small class="toc">By using this app, you acknowledge that you have read and accept our <a href="#" data-toggle="modal" data-target="#tocModal">terms of service</a>.</small>
+          <a href="#" class="btn btn-primary btn-lg finish">FINISHED! SHARE THIS IMAGE</a>
+
         </div>
       </div>
   </section>
-  <footer class="m-t-3">
-    <div class="container">
-
-    </div>
+  <footer class="container m-t-3">
+    <div class="row p-y-1">
+			<div class="col-xs-12 text-xs-center">
+          <small class="toc p-a-1">Thanks for using the custom cover tool! So you don't get into trouble, please do not upload and share pictures that you didn’t take yourself, don't have permission to use or that show anything illegal, offensive or which may upset another person! By using this app you agree to the <a href="">terms of use</a>.</small>
+        </div>
+  		</div>
+    <div class="row p-y-1">
+			<div class="col-xs-12 text-xs-center">
+				<p class="lead">
+					For more, go to <a href="http://danandphilgooutside.com">danandphilgooutside.com &rarr;</a>
+				</p>
+			</div>
+		</div>
   </footer>
 
     <div id="backgroundUploadModal" class="modal fade modal--background-upload">
@@ -138,12 +146,12 @@
           <div class="modal-body p-a-1">
             <div class="container-fluid">
               <p class="lead text-xs-center">
-                Upload your image...
+                Upload a background!
               </p>
 
                 <div id="direct_upload" class="row">
                   <form action="{% url 'direct_upload_complete' %}" method="post" enctype="multipart/form-data" class="dropzone">
-                    <span>Drag image here or click to upload</span>
+                    <span>Drag image here or click to upload!</span>
                     {% csrf_token %}
                     {% cloudinary_direct_upload_field request=request %}
                   </form>
@@ -159,13 +167,18 @@
                 ... or select one of ours
               </p>
               <div class="row">
-                <div class="col-xs-6 col-md-4">
-                  <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg.jpg' %}" alt="image" data-large-img="{% static 'img/artboard/backgrounds/dummy-bg.jpg' %}" /></a>
+                <div class="col-xs-6 col-md-4 m-b-1">
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996797/bg4_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469996798/bg4.jpg" /></a>
                 </div>
-                <div class="col-xs-6 col-md-4">
-                  <a href="#" class="select-background"><img src="{% static 'img/artboard/backgrounds/thumbnails/dummy-bg1.jpg' %}" alt="image" data-large-img="{% static 'img/artboard/backgrounds/dummy-bg1.jpg' %}" /></a>
+                <div class="col-xs-6 col-md-4 m-b-1">
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996471/bg2_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995439/bg2.jpg" /></a>
                 </div>
-
+                <div class="col-xs-6 col-md-4 m-b-1">
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996471/bg1_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995443/bg1.jpg" /></a>
+                </div>
+                <div class="col-xs-6 col-md-4 m-b-1">
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996472/bg3_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995439/bg3.jpg" /></a>
+                </div>
               </div>
             </div>
           </div>
@@ -205,25 +218,5 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <!-- TOC modal -->
-    <div id="tocModal" class="modal fade modal--toc">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <h4 class="modal-title">Terms of Service</h4>
-          </div>
-          <div class="modal-body p-a-1">
-            <div class="container-fluid">
-              <p>
-                Lorem ipsum
-              </p>
-            </div>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
   </body>
 </html>

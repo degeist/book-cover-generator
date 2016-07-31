@@ -1,15 +1,19 @@
 /* The ribbons */
 .corner-ribbon{
-  width: 300px;
-  background: $brand-primary;
-  top: 50px;
-  left: -75px;
-  text-align: center;
-  line-height: 50px;
-  color: #f0f0f0;
-  transform: rotate(-45deg);
-  position: fixed;
-  box-shadow: 0 0 3px rgba(0,0,0,.3);
-  z-index: 2000;
   display: none;
+  @include media-breakpoint-up(md) {
+    display: block;
+    width: 300px;
+    background: $brand-info;
+    top: 50px;
+    left: -75px;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 50px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    position: fixed;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+    z-index: 2000;
+  }
 }

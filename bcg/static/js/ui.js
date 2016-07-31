@@ -1,7 +1,9 @@
 $(document).ready(function() {
+
+
   // Setting base vars
   var currentCutout = $('img#artboardCutout').attr('src');
-  var currentCutoutNumber = '5'; // Default is dp-cutout5.png
+  var currentCutoutNumber = '1'; // Default is dp-cutout1.png
 
   // Open the background upload modal
   $('#backgroundUpload').click(function() {
@@ -54,10 +56,20 @@ $(document).ready(function() {
 
   // Output variables
   var finishArtboard = function() {
-
       var cutout = currentCutoutNumber;
       var text = encodeURIComponent($('p#userCoverTextEditable').text());
-      var artboardURL = '/artboard/v' + cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
+      var artboardBackgroundVersion = "";
+
+    // Test to see if any BG was uploaded
+    if (!cloudinaryVars.backgroundUploaded){
+      artboardBackgroundVersion = $('#artboard').css('background-image').replace('url("http://res.cloudinary.com/geist/image/upload/v','').replace('")','');
+      console.log(artboardBackgroundVersion);
+    } else {
+      artboardBackgroundVersion =  cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat;
+    }
+
+    var artboardURL = '/artboard/v' + artboardBackgroundVersion + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
+      //console.log(artboardURL);
       window.location.href=artboardURL;
     }
 

@@ -1,34 +1,38 @@
-$artboard-ratio:        1.32;
-$artboard-width:        500px;
-$artboard-height:       $artboard-width * $artboard-ratio;
-$artboard-title-height: $artboard-height * 0.14;
+$artboard-ratio:          1.32;
+$artboard-width:           500px;
+$artboard-height:         $artboard-width * $artboard-ratio;
+$artboard-title-height:   86px;
+$artboard-cutouts-height: 460px;
 
-$artboard-subtitle-height: calc(#{$artboard-height} - (#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .56 + 8px));
+$artboard-subtitle-height: 100px;
 
 
 // Z-index (Bootstrap starts at 1000)
-$z-index-bg-upload:     400;
+$z-index-artboard:     100;
+$z-index-step:          10;
+
 
 .artboard {
   max-width: $artboard-width;
   min-height: $artboard-height;
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(sm) {
     max-width: none;
     min-height: initial;
     width: $artboard-width;
     height: $artboard-height;
   }
 
-  // Optimise this for mobile
   margin: 0 auto;
   border: 4px solid white;
-  background-color: $brand-secondary;
+  background-color: $sand-color;
   @include box-shadow(4);
-  background-size: cover;
+  background-size: 500px 660px;
   position: relative;
 
   &--work {
-    background: url('http://res.cloudinary.com/geist/image/upload/v1468772151/bg-1.jpg') top center no-repeat $brand-secondary;
+    background-image: url('http://res.cloudinary.com/geist/image/upload/v1469996798/bg4.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom center;
   }
 
   &--final {
@@ -48,25 +52,29 @@ $z-index-bg-upload:     400;
 
     &--title {
         display: block;
-        margin: $spacer-y auto;
+        margin: 4px auto;
         height: $artboard-title-height;
         top: 0;
+        z-index: $z-index-artboard;
     }
 
     &--background-upload {
       height: $icon-size; // Icon height
-      top: calc(#{$artboard-title-height} + 2* #{$spacer-y});
-      z-index: $z-index-bg-upload;
+      top: $artboard-title-height + 8px;
+      z-index: $z-index-artboard + 10;
     }
 
     &--cutouts {
-      height: $artboard-height * .60;
-      top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size});
+      height: $artboard-cutouts-height;
+      top: $artboard-title-height + $icon-size + 8px;
+      z-index: $z-index-artboard + 4;
     }
 
     &--subtitle {
-        top: calc(#{$artboard-title-height} + 4 * #{$spacer-y} + #{$icon-size} + #{$artboard-height} * .56);
-        height: $artboard-subtitle-height;
+        bottom: 0;
+        min-height: $artboard-subtitle-height;
+        z-index: $z-index-artboard + 6;
+
     }
   }
 
@@ -97,7 +105,6 @@ $z-index-bg-upload:     400;
           fill: rgba(255,255,255, 1)
         }
       }
-
     }
 
     &--cutouts {
@@ -109,6 +116,7 @@ $z-index-bg-upload:     400;
     &--subtitle {
       display: block;
       padding: 0 $spacer-x;
+      line-height: 40px;
     }
   }
 
@@ -120,10 +128,10 @@ $z-index-bg-upload:     400;
   }
 
   &__cutouts {
-    height:  $artboard-height * .60;
+    height:  $artboard-cutouts-height;
     // Fit them in on smaller displays
-    @include media-breakpoint-down(md) {
-      height: $artboard-height * .55;
+    @include media-breakpoint-down(sm) {
+      height: $artboard-height * .6;
     }
     width: auto;
     display: block;
@@ -137,7 +145,9 @@ $z-index-bg-upload:     400;
 .toc {
   display: block;
   clear: both;
-  max-width: 300px;
+  max-width: 500px;
+  border-radius: $border-radius;
   margin: $spacer-x auto;
   font-style: italic;
+  background-color: $gray-lightest;
 }

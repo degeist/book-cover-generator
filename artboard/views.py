@@ -25,14 +25,14 @@ def view(request, version_id, image_id, image_extension):
 
 def upload(request):
     unsigned = request.GET.get("unsigned") == "true"
-    
+
     if (unsigned):
         # For the sake of simplicity of the sample site, we generate the preset on the fly. It only needs to be created once, in advance.
         try:
             api.upload_preset(ArtboardUnsignedDirectForm.upload_preset_name)
         except api.NotFound:
             api.create_upload_preset(name=ArtboardUnsignedDirectForm.upload_preset_name, unsigned=True, folder="preset_folder")
-            
+
     direct_form = ArtboardUnsignedDirectForm() if unsigned else ArtboardDirectForm()
     context = dict(
         # Form demonstrating backend upload

@@ -24,9 +24,9 @@ $(document).ready(function(){
       acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
       messages : {
           maxNumberOfFiles: 'Only one image at a time, ladies and gents.',
-          acceptFileTypes: 'That file is not allowed. Only PNG, JPG or GIF, please',
-          maxFileSize: 'That image is too big. Must be less than 8MB',
-          minFileSize: 'That image is way too small...'
+          acceptFileTypes: 'WYD? The file must be a .jpg, .png or .gif!',
+          maxFileSize: 'This file is too big! Must be less than 8MB',
+          minFileSize: 'This file is small!'
         }
     })
     // Show frontend errors on fails
@@ -42,7 +42,6 @@ $(document).ready(function(){
         Math.round((data.loaded * 100.0) / data.total) + '%');
     })
     .on('cloudinarydone', function (e, data) {
-        console.log('Updating backend...');
         $.post(this.form.action, $(this.form).serialize()).always(function (result, status, jqxhr) {
           $('.status_value').text(result.errors ? JSON.stringify(result.errors) : status);
         });
@@ -62,7 +61,7 @@ $(document).ready(function(){
         cloudinaryVars.backgroundVersion    = data.result.version;
         cloudinaryVars.backgroundID         = data.result.public_id;
         cloudinaryVars.backgroundFileFormat = data.result.format;
-
+        cloudinaryVars.backgroundUploaded   = true;
         //prettydump(data.result);
 
     });
