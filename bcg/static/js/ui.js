@@ -1,3 +1,7 @@
+function commaEncodeURIComponent (str) {
+  return encodeURIComponent(str).replace(/%2C/g,'%252C');
+}
+
 $(document).ready(function() {
 
   // Setting base vars
@@ -58,19 +62,21 @@ $(document).ready(function() {
   // Get and output artboard variables
   var finishArtboard = function() {
       var cutout = currentCutoutNumber;
-      var text = encodeURIComponent($('p#userCoverTextEditable').text());
+      var text = commaEncodeURIComponent($('p#userCoverTextEditable').text());
       var artboardBackgroundVersion = "";
 
-    // Test to see if any BG was uploaded
-    if (!cloudinaryVars.backgroundUploaded){
-      artboardBackgroundVersion = $('#artboard').css('background-image').replace('url("http://res.cloudinary.com/geist/image/upload/v','').replace('")','');
-      console.log(artboardBackgroundVersion);
-    } else {
-      artboardBackgroundVersion =  cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat;
-    }
+      // Test to see if any BG was uploaded
+      if (!cloudinaryVars.backgroundUploaded){
+        artboardBackgroundVersion = $('#artboard').css('background-image').replace('url("http://res.cloudinary.com/geist/image/upload/v','').replace('")','');
+        console.log(artboardBackgroundVersion);
+      } else {
+        artboardBackgroundVersion =  cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat;
+      }
 
-    var artboardURL = '/artboard/v' + artboardBackgroundVersion + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
+      // Construct URL to parse via the view.html
+      var artboardURL = '/artboard/v' + artboardBackgroundVersion + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
       //console.log(artboardURL);
+      // Send off GET request
       window.location.href=artboardURL;
     }
 

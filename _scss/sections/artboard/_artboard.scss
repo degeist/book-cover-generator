@@ -4,7 +4,7 @@ $artboard-height:         $artboard-width * $artboard-ratio;
 $artboard-title-height:   86px;
 $artboard-cutouts-height: 460px;
 
-$artboard-subtitle-height: 100px;
+$artboard-subtitle-height: 110px;
 
 
 // Z-index (Bootstrap starts at 1000)
@@ -116,7 +116,6 @@ $z-index-step:          10;
     &--subtitle {
       display: block;
       padding: 0 $spacer-x;
-      //line-height: 40px;
       //background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
     }
   }
