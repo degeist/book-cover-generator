@@ -1,7 +1,7 @@
 $artboard-ratio:          1.32;
 $artboard-width:           500px;
 $artboard-height:         $artboard-width * $artboard-ratio;
-$artboard-title-height:   86px;
+$artboard-title-height:   180px;
 $artboard-cutouts-height: 460px;
 
 $artboard-subtitle-height: 110px;
@@ -53,20 +53,23 @@ $z-index-step:          10;
     &--title {
         display: block;
         margin: 4px auto;
-        height: $artboard-title-height;
+        height: 120px;
+        @include media-breakpoint-up(sm) {
+          height: 180px;
+        }
         top: 0;
         z-index: $z-index-artboard;
     }
 
     &--background-upload {
       height: $icon-size; // Icon height
-      top: $artboard-title-height + 8px;
+      top: 120px;
       z-index: $z-index-artboard + 10;
     }
 
     &--cutouts {
       height: $artboard-cutouts-height;
-      top: $artboard-title-height + $icon-size + 8px;
+      top: 120px;
       z-index: $z-index-artboard + 4;
     }
 
@@ -131,7 +134,7 @@ $z-index-step:          10;
     height:  $artboard-cutouts-height;
     // Fit them in on smaller displays
     @include media-breakpoint-down(sm) {
-      height: $artboard-height * .6;
+      height: $artboard-height * .58;
     }
     width: auto;
     display: block;

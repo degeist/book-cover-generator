@@ -7135,20 +7135,26 @@ a.logo svg:hover {
 .artboard__wrapper--title {
   display: block;
   margin: 4px auto;
-  height: 86px;
+  height: 120px;
   top: 0;
   z-index: 100;
 }
 
+@media (min-width: 544px) {
+  .artboard__wrapper--title {
+    height: 180px;
+  }
+}
+
 .artboard__wrapper--background-upload {
   height: 32px;
-  top: 94px;
+  top: 120px;
   z-index: 110;
 }
 
 .artboard__wrapper--cutouts {
   height: 460px;
-  top: 126px;
+  top: 120px;
   z-index: 104;
 }
 
@@ -7208,7 +7214,7 @@ a.logo svg:hover {
 
 @media (max-width: 767px) {
   .artboard__cutouts {
-    height: 396px;
+    height: 382.8px;
   }
 }
 
@@ -7233,7 +7239,7 @@ a.logo svg:hover {
   margin-bottom: 0;
   min-height: 110px;
   font-size: 50px;
-  line-height: 48px;
+  line-height: 1;
   color: white;
   display: block;
   width: 100%;
@@ -7245,8 +7251,7 @@ a.logo svg:hover {
 
 @media (max-width: 991px) {
   .inline-text-edit {
-    font-size: 30px;
-    line-height: 30px;
+    font-size: 40px;
   }
 }
 
@@ -7274,6 +7279,7 @@ a.logo svg:hover {
 
 .artboard__helper-text {
   color: white;
+  font-size: 0.875rem;
   background-color: #5bc0de;
   border-radius: 0.25rem;
   display: block;
@@ -7292,8 +7298,10 @@ a.logo svg:hover {
 }
 
 .artboard__helper-text--br {
-  -webkit-transform: rotate(-7deg);
-  transform: rotate(-7deg);
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  top: 20px;
+  width: 130px;
 }
 
 .artboard__helper-text--bl {
@@ -7312,7 +7320,8 @@ a.logo svg:hover {
   -webkit-transform: rotate(7deg);
   transform: rotate(7deg);
   top: 150px;
-  left: -80px;
+  left: -60px;
+  width: 130px;
 }
 
 @media (max-width: 991px) {

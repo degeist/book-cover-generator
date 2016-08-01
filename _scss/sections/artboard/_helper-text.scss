@@ -1,5 +1,6 @@
 .artboard__helper-text {
   color: white;
+  font-size: $font-size-sm;
   background-color: $brand-info;
   border-radius: $border-radius;
   display: block;
@@ -17,7 +18,10 @@
   }
 
   &--br {
-    transform: rotate(-7deg);
+    transform: rotate(-30deg);
+    top: 20px;
+    width: 130px;
+
   }
 
   &--bl {
@@ -32,7 +36,8 @@
   &--tl {
     transform: rotate(7deg);
     top: 150px;
-    left: -80px;
+    left: -60px;
+    width: 130px;
     @include media-breakpoint-down(md) {
       left: -20px;
     } ;
