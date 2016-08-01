@@ -6,7 +6,7 @@
 
     $.fn.inlineEdit = function(event, options, callback) {
 
-      var maxLength       = 40;
+      var maxLength       = 30;
       var wordCounter     = $('.artboard__subtitle__word-counter');
       var paragraphClass  = $('.inline-text-edit');
 

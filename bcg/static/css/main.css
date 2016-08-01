@@ -7193,7 +7193,6 @@ a.logo svg:hover {
 .artboard__actionable-item--subtitle {
   display: block;
   padding: 0 1rem;
-  line-height: 40px;
 }
 
 .artboard__title {
@@ -7233,8 +7232,8 @@ a.logo svg:hover {
   padding: 1px;
   margin-bottom: 0;
   min-height: 100px;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 50px;
+  line-height: 48px;
   color: white;
   display: block;
   width: 100%;
