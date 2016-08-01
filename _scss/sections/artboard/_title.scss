@@ -18,6 +18,7 @@ $subtitle-font-size: 50px;
   overflow: hidden;
   word-break: break-all;
   word-wrap: break-word;
+  text-shadow: 5px 5px rgba(0, 0, 0, .9);
 }
 
 .inline-edit-input {
@@ -30,6 +31,7 @@ $subtitle-font-size: 50px;
   width: 100%;
   overflow: hidden;
   color: white;
+  text-shadow: 5px 5px rgba(0, 0, 0, .9);
   &:focus {
     // outline: none;
     // border: none;

@@ -7240,6 +7240,7 @@ a.logo svg:hover {
   overflow: hidden;
   word-break: break-all;
   word-wrap: break-word;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.9);
 }
 
 @media (max-width: 991px) {
@@ -7259,6 +7260,7 @@ a.logo svg:hover {
   width: 100%;
   overflow: hidden;
   color: white;
+  text-shadow: 5px 5px rgba(0, 0, 0, 0.9);
 }
 
 .artboard__subtitle__word-counter {
