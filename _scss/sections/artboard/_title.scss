@@ -2,6 +2,7 @@
   font-family: $custom-font-family;
   font-weight: 700;
   padding: 1px; // Add padding to avoid the box "popping", when inline input box is inserted inside p element. Gets remove/re-added in JS
+  margin-bottom: 0;
   min-height: $artboard-subtitle-height;
   font-size: 40px;
   line-height: 40px;

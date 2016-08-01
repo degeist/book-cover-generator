@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
   // Setting base vars
   var currentCutout = $('img#artboardCutout').attr('src');
   var currentCutoutNumber = '1'; // Default is dp-cutout1.png
@@ -16,6 +15,8 @@ $(document).ready(function() {
     var chosenImg = $(this).find('img').attr('data-large-img');
     $('#artboard').css("background-image", "url(" + chosenImg +")");
     $('#backgroundUploadModal').modal('hide');
+    // Set the Cloudinary upload flag to false
+    cloudinaryVars.backgroundUploaded = false;
   })
 
   // Open the cutouts modal & set the current modal
@@ -54,7 +55,7 @@ $(document).ready(function() {
     $(this).children('.artboard__helper-text').hide('fast');
   });
 
-  // Output variables
+  // Get and output artboard variables
   var finishArtboard = function() {
       var cutout = currentCutoutNumber;
       var text = encodeURIComponent($('p#userCoverTextEditable').text());
