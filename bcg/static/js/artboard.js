@@ -12,7 +12,7 @@ function finishArtboard(cutout,background) {
     if (!cloudinaryVars.backgroundUploadFlag){
       var artboardImageURL = 'bg' + background + '.jpg';
     } else {
-      artboardImageURL =  cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat;
+      artboardImageURL =  'v' + cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat;
     }
 
     // Construct URL to parse via the view.html
