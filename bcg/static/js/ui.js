@@ -1,12 +1,11 @@
-function commaEncodeURIComponent (str) {
-  return encodeURIComponent(str).replace(/%2C/g,'%252C');
-}
+
 
 $(document).ready(function() {
 
   // Setting base vars
   var currentCutout = $('img#artboardCutout').attr('src');
   var currentCutoutNumber = '1'; // Default is dp-cutout1.png
+  var currentBackgroundNumber = '1'; // Default is bg1.jpg
 
   // Open the background upload modal
   $('#backgroundUpload').click(function() {
@@ -17,10 +16,12 @@ $(document).ready(function() {
   $('.select-background').click(function() {
     // Parse large image URL from the data-attr
     var chosenImg = $(this).find('img').attr('data-large-img');
-    $('#artboard').css("background-image", "url(" + chosenImg +")");
+    $('#artboard').css('background-image', 'url(' + chosenImg + ')');
     $('#backgroundUploadModal').modal('hide');
     // Set the Cloudinary upload flag to false
-    cloudinaryVars.backgroundUploaded = false;
+    cloudinaryVars.backgroundUploadFlag = false;
+    currentBackgroundNumber = $(this).find('img').attr('data-background-number');
+    console.log(currentBackgroundNumber);
   })
 
   // Open the cutouts modal & set the current modal
@@ -59,27 +60,9 @@ $(document).ready(function() {
     $(this).children('.artboard__helper-text').hide('fast');
   });
 
-  // Get and output artboard variables
-  var finishArtboard = function() {
-      var cutout = currentCutoutNumber;
-      var text = commaEncodeURIComponent($('p#userCoverTextEditable').text());
-      var artboardBackgroundVersion = "";
-
-      // Test to see if any BG was uploaded
-      if (!cloudinaryVars.backgroundUploaded){
-        artboardBackgroundVersion = $('#artboard').css('background-image').replace('url("http://res.cloudinary.com/geist/image/upload/v','').replace('")','');
-        console.log(artboardBackgroundVersion);
-      } else {
-        artboardBackgroundVersion =  cloudinaryVars.backgroundVersion + '/' + cloudinaryVars.backgroundID + '.' + cloudinaryVars.backgroundFileFormat;
-      }
-
-      // Construct URL to parse via the view.html
-      var artboardURL = '/artboard/v' + artboardBackgroundVersion + '/?cutout=dp-cutout' + cutout + '.png&text=' + text;
-      //console.log(artboardURL);
-      // Send off GET request
-      window.location.href=artboardURL;
-    }
-
-    $('.finish').click(finishArtboard);
+  // When clicking the finish button, forward the user to the final view
+  $('#artboard-finish').on('click', function() {
+    finishArtboard(currentCutoutNumber,currentBackgroundNumber);
+  });
 
 });

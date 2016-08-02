@@ -24,5 +24,6 @@ urlpatterns = [
 	url(r'^upload/$', artboard.upload, name='upload'),
 	url(r'^upload/complete$', artboard.direct_upload_complete, name='direct_upload_complete'),
     url(r'^artboard/(?P<version_id>[\w-]+)/(?P<image_id>[\w-]+).(?P<image_extension>[\w-]+)/$', artboard.view, name='view'),
+    url(r'^artboard/(?P<image_id>[\w-]+).(?P<image_extension>[\w-]+)/$', artboard.view, name='view'),
     url(r'^admin/', admin.site.urls),
 ]

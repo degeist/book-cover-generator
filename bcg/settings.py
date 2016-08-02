@@ -11,6 +11,8 @@ SECRET_KEY = 'z$ik-)(jw3+u7j18^8wt=pje46-v$x*w(giki2vv9wqw$2*%g#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+SITE_URL = os.environ.get('SITE_URL')
+
 # Application definition
 
 INSTALLED_APPS = [

@@ -61,7 +61,7 @@ $(document).ready(function(){
         cloudinaryVars.backgroundVersion    = data.result.version;
         cloudinaryVars.backgroundID         = data.result.public_id;
         cloudinaryVars.backgroundFileFormat = data.result.format;
-        cloudinaryVars.backgroundUploaded   = true;
+        cloudinaryVars.backgroundUploadFlag = true;
         //prettydump(data.result);
 
     });

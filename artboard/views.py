@@ -1,5 +1,6 @@
 import json
 
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.csrf import csrf_exempt
@@ -10,10 +11,14 @@ from cloudinary import api # Only required for creating upload presets on the fl
 from .models import Artboard
 from .forms import ArtboardForm, ArtboardDirectForm, ArtboardUnsignedDirectForm
 
-def view(request, version_id, image_id, image_extension):
-    artboard = get_object_or_404(Artboard, image='image/upload/%s/%s.%s' % (version_id, image_id, image_extension))
+def view(request, image_id, image_extension, version_id = None):
+    if version_id:
+        artboard = get_object_or_404(Artboard, image='image/upload/%s/%s.%s' % (version_id, image_id, image_extension))
+    else:
+        artboard = None
 
     context = {
+        'site_url': settings.SITE_URL,
         'artboard': artboard,
         'version_id': version_id,
         'image_id': image_id,

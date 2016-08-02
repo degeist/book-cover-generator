@@ -52,6 +52,7 @@
   <script src="{% static 'js/vendor/fileuploader/jquery.fileupload-validate.js' %}"></script>
   <script src="{% static 'js/fileupload.js' %}"></script>
   <script src="{% static 'js/jquery.inline-edit.js' %}"></script>
+  <script src="{% static 'js/artboard.js' %}"></script>
   <script src="{% static 'js/ui.js' %}"></script>
 </head>
 <body>
@@ -115,7 +116,7 @@
   <section class="social container m-y-3 text-xs-center">
       <div class="row">
         <div class="col-xs-12">
-          <a href="#" class="btn btn-primary btn-lg finish">FINISHED! SHARE THIS IMAGE</a>
+          <a href="#" id="artboard-finish" class="btn btn-primary btn-lg">FINISHED! SHARE THIS IMAGE</a>
 
         </div>
       </div>
@@ -168,16 +169,16 @@
               </p>
               <div class="row">
                 <div class="col-xs-6 col-md-4 m-b-1">
-                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1470073115/bg1_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1470073116/bg1.jpg" /></a>
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1470073115/bg1_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1470073116/bg1.jpg" data-background-number="1" /></a>
                 </div>
                 <div class="col-xs-6 col-md-4 m-b-1">
-                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996471/bg2_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995439/bg2.jpg" /></a>
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996471/bg2_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995439/bg2.jpg" data-background-number="2" /></a>
                 </div>
                 <!-- <div class="col-xs-6 col-md-4 m-b-1">
-                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996472/bg3_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995439/bg3.jpg" /></a>
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996472/bg3_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469995439/bg3.jpg" data-background-number="3" /></a>
                 </div>
                 <div class="col-xs-6 col-md-4 m-b-1">
-                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996797/bg4_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469996798/bg4.jpg" /></a>
+                  <a href="#" class="select-background"><img src="http://res.cloudinary.com/geist/image/upload/v1469996797/bg4_small.jpg" alt="Background Image" data-large-img="http://res.cloudinary.com/geist/image/upload/v1469996798/bg4.jpg" data-background-number="4" /></a>
                 </div> -->
               </div>
             </div>
