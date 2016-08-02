@@ -4,3 +4,4 @@ gunicorn==19.6.0
 psycopg2==2.6.2
 whitenoise==3.2
 cloudinary==1.4.0
+newrelic==2.68.0.50
