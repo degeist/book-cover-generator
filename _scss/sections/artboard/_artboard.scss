@@ -150,7 +150,7 @@ $z-index-step:          10;
   }
 }
 
-// Externals
+// Peripherals
 
 .toc {
   display: block;
@@ -164,4 +164,22 @@ $z-index-step:          10;
 
 .btn.btn-lg {
   font-size: 1rem;
+}
+
+.btn--download {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 5px 8px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: bold;
+
+    svg {
+      height: 18px;
+      width: 18px;
+      margin-bottom: -5px;
+    }
+    span {
+      display: inline-block;
+    }
 }

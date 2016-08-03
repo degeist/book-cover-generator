@@ -7026,6 +7026,25 @@ a.logo svg:hover {
   font-size: 1rem;
 }
 
+.btn--download {
+  font-size: 12px;
+  line-height: 16px;
+  padding: 5px 8px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: bold;
+}
+
+.btn--download svg {
+  height: 18px;
+  width: 18px;
+  margin-bottom: -5px;
+}
+
+.btn--download span {
+  display: inline-block;
+}
+
 .inline-text-edit {
   font-family: "Open Sans", "Akzidenz", sans-serif;
   font-weight: 700;
@@ -7036,8 +7055,6 @@ a.logo svg:hover {
   display: block;
   width: 100%;
   overflow: hidden;
-  word-break: break-all;
-  word-wrap: break-word;
   text-shadow: 5px 5px rgba(0, 0, 0, 0.9);
   font-size: 40px;
   min-height: 140px;

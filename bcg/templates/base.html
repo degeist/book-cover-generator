@@ -23,12 +23,21 @@
     <meta content="{{ request.build_absolute_uri }}" property="og:url">
     <meta content="DAPGO" property="og:site_name">
     <meta content="I created my own cover for DAPGO" property="og:description">
-    <meta content="http://res.cloudinary.com/geist/image/upload/w_500,h_660,c_fill/l_static:danphil-headline.png,h_180,c_fit/fl_layer_apply,y_10,g_north/l_static:{{ cutout }},c_fit,h_500/fl_layer_apply,y_80,g_north/l_text:Open%20Sans_60_bold_center_line_spacing_-18:{{ text|urlencode:"" }},c_fit,w_480,co_white/e_shadow:10,co_black,c_fit/fl_layer_apply,g_south,y_10/q_100/{{ version_id }}/{{ image_id }}.{{ image_extension }}" property="og:image">
+    {% if artboard %}
+      <meta content="http://res.cloudinary.com/geist/image/upload/w_500,h_660,c_fill/l_static:danphil-headline.png,h_180,c_fit/fl_layer_apply,y_10,g_north/l_static:{{ cutout }},c_fit,h_500/fl_layer_apply,y_80,g_north/l_text:Open%20Sans_60_bold_center_line_spacing_-18:{{ text|urlencode:"" }},c_fit,w_480,co_white/e_shadow:10,co_black,c_fit/fl_layer_apply,g_south,y_10/q_100/{{ version_id }}/{{ image_id }}.{{ image_extension }}" property="og:image">
+    {% else %}
+      <meta content="http://res.cloudinary.com/geist/image/upload/w_500,h_660,c_fill/l_static:danphil-headline.png,h_180,c_fit/fl_layer_apply,y_10,g_north/l_static:{{ cutout }},c_fit,h_500/fl_layer_apply,y_80,g_north/l_text:Open%20Sans_60_bold_center_line_spacing_-18:{{ text|urlencode:"" }},c_fit,w_480,co_white/e_shadow:10,co_black,c_fit/fl_layer_apply,g_south,y_10/q_100/{{ image_id }}.{{ image_extension }}" property="og:image">
+    {% endif %}
+
     <!-- / Twitter cards -->
     <meta content="summary_large_image" name='twitter:card'>
     <meta content="Customise your own DAPGO cover!" name='twitter:title'>
     <meta content="I created my own cover for Dan & Phil’s photo book!" name='twitter:description'>
-    <meta content="http://res.cloudinary.com/geist/image/upload/w_500,h_660,c_fill/l_static:danphil-headline.png,h_180,c_fit/fl_layer_apply,y_10,g_north/l_static:{{ cutout }},c_fit,h_500/fl_layer_apply,y_80,g_north/l_text:Open%20Sans_60_bold_center_line_spacing_-18:{{ text|urlencode:"" }},c_fit,w_480,co_white/e_shadow:10,co_black,c_fit/fl_layer_apply,g_south,y_10/q_100/{{ version_id }}/{{ image_id }}.{{ image_extension }}" name="twitter:image">
+    {% if artboard %}
+      <meta content="http://res.cloudinary.com/geist/image/upload/w_500,h_660,c_fill/l_static:danphil-headline.png,h_180,c_fit/fl_layer_apply,y_10,g_north/l_static:{{ cutout }},c_fit,h_500/fl_layer_apply,y_80,g_north/l_text:Open%20Sans_60_bold_center_line_spacing_-18:{{ text|urlencode:"" }},c_fit,w_480,co_white/e_shadow:10,co_black,c_fit/fl_layer_apply,g_south,y_10/q_100/{{ version_id }}/{{ image_id }}.{{ image_extension }}" name="twitter:image">
+    {% else %}
+      <meta content="http://res.cloudinary.com/geist/image/upload/w_500,h_660,c_fill/l_static:danphil-headline.png,h_180,c_fit/fl_layer_apply,y_10,g_north/l_static:{{ cutout }},c_fit,h_500/fl_layer_apply,y_80,g_north/l_text:Open%20Sans_60_bold_center_line_spacing_-18:{{ text|urlencode:"" }},c_fit,w_480,co_white/e_shadow:10,co_black,c_fit/fl_layer_apply,g_south,y_10/q_100/{{ image_id }}.{{ image_extension }}" name="twitter:image">
+    {% endif %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
