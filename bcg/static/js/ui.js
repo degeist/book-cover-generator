@@ -61,7 +61,7 @@ $(document).ready(function() {
   });
 
   // When clicking the finish button, forward the user to the final view
-  $('#artboard-finish').on('click', function() {
+  $('#artboardFinish').on('click', function() {
     finishArtboard(currentCutoutNumber,currentBackgroundNumber);
   });
 

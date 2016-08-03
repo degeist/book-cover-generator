@@ -14,14 +14,13 @@ $z-index-step:          10;
 
 .artboard {
   max-width: $artboard-width;
-  min-height: $artboard-height;
+  min-height: 600px;
   @include media-breakpoint-up(sm) {
     max-width: none;
     min-height: initial;
     width: $artboard-width;
     height: $artboard-height;
   }
-
   margin: 0 auto;
   border: 4px solid white;
   background-color: $sand-color;
@@ -53,7 +52,7 @@ $z-index-step:          10;
     &--title {
         display: block;
         margin: 4px auto;
-        height: 120px;
+        height: 100px;
         @include media-breakpoint-up(sm) {
           height: 180px;
         }
@@ -63,12 +62,18 @@ $z-index-step:          10;
 
     &--background-upload {
       height: $icon-size; // Icon height
-      top: 120px;
+      top: 80px;
+      @include media-breakpoint-up(sm) {
+        top: 120px;
+      }
       z-index: $z-index-artboard + 10;
     }
 
     &--cutouts {
-      height: $artboard-cutouts-height;
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        height: $artboard-cutouts-height;
+      }
       top: 120px;
       z-index: $z-index-artboard + 4;
     }
@@ -131,12 +136,12 @@ $z-index-step:          10;
   }
 
   &__cutouts {
-    height:  $artboard-cutouts-height;
-    // Fit them in on smaller displays
-    @include media-breakpoint-down(sm) {
-      height: $artboard-height * .58;
+    height: auto;
+    width: 300px;
+    @include media-breakpoint-up(sm) {
+      height: $artboard-cutouts-height;
+      width: auto;
     }
-    width: auto;
     display: block;
   }
 
@@ -145,12 +150,18 @@ $z-index-step:          10;
   }
 }
 
+// Externals
+
 .toc {
   display: block;
   clear: both;
-  max-width: 500px;
+  max-width: 460px;
   border-radius: $border-radius;
   margin: $spacer-x auto;
   font-style: italic;
   background-color: $gray-lightest;
+}
+
+.btn.btn-lg {
+  font-size: 1rem;
 }

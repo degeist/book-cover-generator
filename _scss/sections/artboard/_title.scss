@@ -5,12 +5,7 @@ $subtitle-font-size: 50px;
   font-weight: 700;
   padding: 1px; // Add padding to avoid the box "popping", when inline input box is inserted inside p element. Gets remove/re-added in JS
   margin-bottom: 0;
-  min-height: $artboard-subtitle-height;
-  font-size: $subtitle-font-size;
   line-height: 1;
-  @include media-breakpoint-down(md) {
-    font-size: $subtitle-font-size * 0.8;
-  }
   color: white;
   display: block;
   width: 100%;
@@ -18,6 +13,14 @@ $subtitle-font-size: 50px;
   word-break: break-all;
   word-wrap: break-word;
   text-shadow: 5px 5px rgba(0, 0, 0, .9);
+
+  // Sizing for mobile
+  font-size: $subtitle-font-size * 0.8;
+  min-height: $artboard-subtitle-height + 30px;
+  @include media-breakpoint-up(sm) {
+    min-height: $artboard-subtitle-height;
+    font-size: $subtitle-font-size;
+  }
 }
 
 .inline-edit-input {
@@ -31,11 +34,10 @@ $subtitle-font-size: 50px;
   overflow: hidden;
   color: white;
   text-shadow: 5px 5px rgba(0, 0, 0, .9);
-  &:focus {
-    // outline: none;
-    // border: none;
+  min-height: $artboard-subtitle-height + 30px;
+  @include media-breakpoint-up(sm) {
+    min-height: $artboard-subtitle-height;
   }
-
 }
 
 .artboard__subtitle__word-counter {

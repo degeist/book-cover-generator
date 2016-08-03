@@ -6870,7 +6870,7 @@ a.logo svg:hover {
 
 .artboard {
   max-width: 500px;
-  min-height: 660px;
+  min-height: 600px;
   margin: 0 auto;
   border: 4px solid white;
   background-color: #F5EFE9;
@@ -6912,7 +6912,7 @@ a.logo svg:hover {
 .artboard__wrapper--title {
   display: block;
   margin: 4px auto;
-  height: 120px;
+  height: 100px;
   top: 0;
   z-index: 100;
 }
@@ -6925,14 +6925,26 @@ a.logo svg:hover {
 
 .artboard__wrapper--background-upload {
   height: 32px;
-  top: 120px;
+  top: 80px;
   z-index: 110;
 }
 
+@media (min-width: 544px) {
+  .artboard__wrapper--background-upload {
+    top: 120px;
+  }
+}
+
 .artboard__wrapper--cutouts {
-  height: 460px;
+  width: 100%;
   top: 120px;
   z-index: 104;
+}
+
+@media (min-width: 544px) {
+  .artboard__wrapper--cutouts {
+    height: 460px;
+  }
 }
 
 .artboard__wrapper--subtitle {
@@ -6984,14 +6996,15 @@ a.logo svg:hover {
 }
 
 .artboard__cutouts {
-  height: 460px;
-  width: auto;
+  height: auto;
+  width: 300px;
   display: block;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 544px) {
   .artboard__cutouts {
-    height: 382.8px;
+    height: 460px;
+    width: auto;
   }
 }
 
@@ -7002,11 +7015,15 @@ a.logo svg:hover {
 .toc {
   display: block;
   clear: both;
-  max-width: 500px;
+  max-width: 460px;
   border-radius: 0.25rem;
   margin: 1rem auto;
   font-style: italic;
   background-color: #ccc;
+}
+
+.btn.btn-lg, .btn-group-lg > .btn {
+  font-size: 1rem;
 }
 
 .inline-text-edit {
@@ -7014,8 +7031,6 @@ a.logo svg:hover {
   font-weight: 700;
   padding: 1px;
   margin-bottom: 0;
-  min-height: 110px;
-  font-size: 50px;
   line-height: 1;
   color: white;
   display: block;
@@ -7024,11 +7039,14 @@ a.logo svg:hover {
   word-break: break-all;
   word-wrap: break-word;
   text-shadow: 5px 5px rgba(0, 0, 0, 0.9);
+  font-size: 40px;
+  min-height: 140px;
 }
 
-@media (max-width: 991px) {
+@media (min-width: 544px) {
   .inline-text-edit {
-    font-size: 40px;
+    min-height: 110px;
+    font-size: 50px;
   }
 }
 
@@ -7043,6 +7061,13 @@ a.logo svg:hover {
   overflow: hidden;
   color: white;
   text-shadow: 5px 5px rgba(0, 0, 0, 0.9);
+  min-height: 140px;
+}
+
+@media (min-width: 544px) {
+  .inline-edit-input {
+    min-height: 110px;
+  }
 }
 
 .artboard__subtitle__word-counter {
