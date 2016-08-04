@@ -15,7 +15,19 @@ Run:
 npm install
 ```
 
+To start Gulp, which monitors and compiles SCSS to CSS run:
+
+```shell
+gulp
+```
+
 Now all files in ```_scss``` are watched and the ```_scss/main.scss``` compiles to ```bcg/static/css/main.css``` on save.
+
+If you want to compile the JS (all source files are in ```_js```) to the file ```scripts.min.jsz```, then run:
+
+```shell
+gulp minifyJS
+```
 
 
 ### Backend

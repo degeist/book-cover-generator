@@ -1,15 +1,39 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-var minify = require('gulp-minify');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
 // Variables
-var input = './_scss/main.scss';
-var output = './bcg/static/css/';
-var sassOptions = {
-  errLogToConsole: true,
-  outputStyle: 'expanded'
-};
+var input = './_scss/main.scss',
+    output = './bcg/static/css/',
+    sassOptions = {
+      errLogToConsole: true,
+      outputStyle: 'expanded'
+    },
+    jsInput = [
+      'node_modules/blueimp-load-image/js/load-image.all.min.js',
+      'node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.min.js',
+      'node_modules/blueimp-file-upload/js/jquery.fileupload-process.js',
+      'node_modules/blueimp-file-upload/js/jquery.fileupload-image.js',
+      'node_modules/blueimp-file-upload/js/jquery.fileupload-validate.js',
+      '_js/fileupload.js',
+      '_js/jquery.inline-edit.js',
+      '_js/artboard.js',
+      '_js/ui.js'
+    ],
+    jsOutput = './bcg/static/js/';
+
+// Compress all the JS into a single minified file
+
+gulp.task('minifyJS', function() {
+    return gulp.src(jsInput)
+        .pipe(concat('scripts.js'))
+        .pipe(rename('scripts.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest(jsOutput));
+});
 
 // Run the Gulp task
 gulp.task('styles', function() {
@@ -21,27 +45,6 @@ gulp.task('styles', function() {
             cascade: false
         }))
     .pipe(gulp.dest(output))
-});
-
-// Load the node frontend JS
-gulp.task('compress', function() {
-  gulp.src([
-    'node_modules/blueimp-load-image/js/load-image.all.min.js',
-    'node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.min.js',
-    'node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
-    'node_modules/blueimp-file-upload/js/jquery.iframe-transport.js',
-    'node_modules/blueimp-file-upload/js/jquery.fileupload.js',
-    'node_modules/blueimp-file-upload/js/jquery.fileupload-process.js',
-    'node_modules/blueimp-file-upload/js/jquery.fileupload-image.js',
-    'node_modules/cloudinary-jquery-file-upload/cloudinary-jquery-file-upload.js'
-  ])
-    .pipe(minify({
-        ext:{
-            src:'.js',
-            min:'.js'
-        }
-    }))
-    .pipe(gulp.dest('./bcg/static/js/vendor/fileuploader/'))
 });
 
 //Watch task

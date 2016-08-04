@@ -21,7 +21,6 @@ $(document).ready(function() {
     // Set the Cloudinary upload flag to false
     cloudinaryVars.backgroundUploadFlag = false;
     currentBackgroundNumber = $(this).find('img').attr('data-background-number');
-    console.log(currentBackgroundNumber);
   })
 
   // Open the cutouts modal & set the current modal

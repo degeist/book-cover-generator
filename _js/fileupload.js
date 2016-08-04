@@ -18,14 +18,14 @@ $(document).ready(function(){
     .cloudinary_fileupload({
       // Frontend file validation
       dropZone: '#direct_upload',
-      maxFileSize: 8000000, // 8000000 = 8MB
+      maxFileSize: 5000000, // 5000000 = 5MB
       minFileSize: 1,
       maxNumberOfFiles: 1,
-      acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+      acceptFileTypes: /(\.|\/)(jpe?g|png)$/i,
       messages : {
           maxNumberOfFiles: 'Only one image at a time, ladies and gents.',
-          acceptFileTypes: 'WYD? The file must be a .jpg, .png or .gif!',
-          maxFileSize: 'This file is too big! Must be less than 8MB',
+          acceptFileTypes: 'WYD? The file must be a .jpg or .png!',
+          maxFileSize: 'This file is too big! Must be less than 5MB',
           minFileSize: 'This file is small!'
         }
     })
