@@ -26,4 +26,5 @@ urlpatterns = [
     url(r'^artboard/(?P<version_id>[\w-]+)/(?P<image_id>[\w-]+).(?P<image_extension>[\w-]+)/$', artboard.view, name='view'),
     url(r'^artboard/(?P<image_id>[\w-]+).(?P<image_extension>[\w-]+)/$', artboard.view, name='view'),
     url(r'^admin/', admin.site.urls),
+    url(r'^loaderio-04d21c600a033086b4bf93a25a5cdeb8.txt$', views.Loaderio, name='Loaderio'),
 ]
