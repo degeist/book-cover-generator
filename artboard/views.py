@@ -12,14 +12,9 @@ from .models import Artboard
 from .forms import ArtboardForm, ArtboardDirectForm, ArtboardUnsignedDirectForm
 
 def view(request, image_id, image_extension, version_id = None):
-    if version_id:
-        artboard = get_object_or_404(Artboard, image='image/upload/%s/%s.%s' % (version_id, image_id, image_extension))
-    else:
-        artboard = None
 
     context = {
         'site_url': settings.SITE_URL,
-        'artboard': artboard,
         'version_id': version_id,
         'image_id': image_id,
         'image_extension': image_extension,
@@ -54,9 +49,6 @@ def upload(request):
         # Only backend upload should be posting here
         form = ArtboardForm(request.POST, request.FILES)
         context['posted'] = form.instance
-        if form.is_valid():
-            # Uploads image and creates a model instance for it
-            form.save()
 
     return render(request, 'upload.html', context)
 
@@ -65,7 +57,6 @@ def direct_upload_complete(request):
     form = ArtboardDirectForm(request.POST)
     if form.is_valid():
         # Create a model instance for uploaded image using the provided data
-        form.save()
         ret = dict(photo_id = form.instance.id)
     else:
         ret = dict(errors = form.errors)
